@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="@color/blue_grey_2" />
+            <stroke android:width="1.0dip" android:color="@color/white" android:dashWidth="4.0dip" android:dashGap="4.0dip" />
+            <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+            <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/primary_grey" />
+            <stroke android:width="1.0dip" android:color="@color/white" />
+            <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+            <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+        </shape>
+    </item>
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="@color/primary_grey" />
+            <stroke android:width="1.0dip" android:color="@color/white" />
+            <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+            <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/blue_grey_2" />
+            <stroke android:width="1.0dip" android:color="@color/white" />
+            <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+            <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+        </shape>
+    </item>
+</selector>

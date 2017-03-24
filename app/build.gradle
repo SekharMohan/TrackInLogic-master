@@ -1,18 +1,19 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "trackinlogic.trans.pss.com.trackinlogic"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        jackOptions {
-            enabled true
-        }
+
 
     }
     buildTypes {
@@ -21,10 +22,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
+
 
 }
 
@@ -37,12 +36,13 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.github.memoizr:shank:v1.3.1'
     compile 'com.jakewharton.timber:timber:4.3.1'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.1.0'
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/light_grey_4" />
+    <padding android:left="@dimen/card_margin_side" android:top="8.0dip" android:right="@dimen/card_margin_side" android:bottom="8.0dip" />
+    <corners android:radius="4.0dip" />
+    <stroke android:width="@dimen/circle_button_stroke" android:color="@color/light_grey_2" />
+</shape>

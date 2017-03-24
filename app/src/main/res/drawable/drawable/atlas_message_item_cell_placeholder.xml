@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/atlas_message_item_cell_radius" />
+    <solid android:color="@android:color/transparent" />
+    <stroke android:width="2.0dip" android:color="@color/atlas_cell_them_background" />
+</shape>

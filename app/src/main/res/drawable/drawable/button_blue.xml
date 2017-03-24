@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:state_focused="false" android:state_enabled="true" app:state_error="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/primary_blue" />
+                    <padding android:left="@dimen/button_stroke_width" android:top="@dimen/button_stroke_width" android:right="@dimen/button_stroke_width" android:bottom="@dimen/button_stroke_width" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/white" />
+                    <padding android:left="@dimen/button_padding" android:top="@dimen/button_padding" android:right="@dimen/button_padding" android:bottom="@dimen/button_padding" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_enabled="false" app:state_error="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/primary_blue" />
+                    <padding android:left="@dimen/button_stroke_width" android:top="@dimen/button_stroke_width" android:right="@dimen/button_stroke_width" android:bottom="@dimen/button_stroke_width" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/white" />
+                    <padding android:left="@dimen/button_padding" android:top="@dimen/button_padding" android:right="@dimen/button_padding" android:bottom="@dimen/button_padding" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_focused="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/primary_blue" />
+                    <padding android:left="@dimen/button_stroke_width" android:top="@dimen/button_stroke_width" android:right="@dimen/button_stroke_width" android:bottom="@dimen/button_stroke_width" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/white" />
+                    <padding android:left="@dimen/button_padding" android:top="@dimen/button_padding" android:right="@dimen/button_padding" android:bottom="@dimen/button_padding" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_enabled="true" app:state_error="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/primary_red" />
+                    <padding android:left="@dimen/button_stroke_width" android:top="@dimen/button_stroke_width" android:right="@dimen/button_stroke_width" android:bottom="@dimen/button_stroke_width" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/white" />
+                    <padding android:left="@dimen/button_padding" android:top="@dimen/button_padding" android:right="@dimen/button_padding" android:bottom="@dimen/button_padding" />
+                    <corners android:topLeftRadius="@dimen/button_corner_radius" android:topRightRadius="@dimen/button_corner_radius" android:bottomLeftRadius="@dimen/button_corner_radius" android:bottomRightRadius="@dimen/button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

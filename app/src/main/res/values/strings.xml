@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TrackIn</string>
+    <!--Navigation Drawer-->
+    <string name="login">SignIn</string>
+    <string name="sign_up">Signup</string>
+    <string name="log_book">log book</string>
+    <string name="log_sheet">log sheet</string>
+</resources>

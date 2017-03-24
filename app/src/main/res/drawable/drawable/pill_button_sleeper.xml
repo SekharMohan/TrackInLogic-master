@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/sleeper" />
+                    <padding android:left="@dimen/rounded_button_padding" android:top="@dimen/rounded_button_padding" android:right="@dimen/rounded_button_padding" android:bottom="@dimen/rounded_button_padding" />
+                    <corners android:topLeftRadius="@dimen/rounded_button_corner_radius" android:topRightRadius="@dimen/rounded_button_corner_radius" android:bottomLeftRadius="@dimen/rounded_button_corner_radius" android:bottomRightRadius="@dimen/rounded_button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/sleeper" />
+                    <padding android:left="@dimen/rounded_button_padding" android:top="@dimen/rounded_button_padding" android:right="@dimen/rounded_button_padding" android:bottom="@dimen/rounded_button_padding" />
+                    <corners android:topLeftRadius="@dimen/rounded_button_corner_radius" android:topRightRadius="@dimen/rounded_button_corner_radius" android:bottomLeftRadius="@dimen/rounded_button_corner_radius" android:bottomRightRadius="@dimen/rounded_button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/circle_button_outline" />
+                    <padding android:left="@dimen/button_stroke_width" android:top="@dimen/button_stroke_width" android:right="@dimen/button_stroke_width" android:bottom="@dimen/button_stroke_width" />
+                    <corners android:topLeftRadius="@dimen/rounded_button_corner_radius" android:topRightRadius="@dimen/rounded_button_corner_radius" android:bottomLeftRadius="@dimen/rounded_button_corner_radius" android:bottomRightRadius="@dimen/rounded_button_corner_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/white" />
+                    <padding android:left="@dimen/rounded_button_padding" android:top="@dimen/rounded_button_padding" android:right="@dimen/rounded_button_padding" android:bottom="@dimen/rounded_button_padding" />
+                    <corners android:topLeftRadius="@dimen/rounded_button_corner_radius" android:topRightRadius="@dimen/rounded_button_corner_radius" android:bottomLeftRadius="@dimen/rounded_button_corner_radius" android:bottomRightRadius="@dimen/rounded_button_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
