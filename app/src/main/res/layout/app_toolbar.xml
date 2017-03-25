@@ -18,7 +18,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:clipToPadding="false"
-            style="@style/DrawerArrowStyle"
+            app:theme="@style/ThemeToolbar"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp">
 

@@ -59,7 +59,7 @@
         android:id="@+id/textInputLayout2">
 
         <EditText
-            android:drawableRight="@drawable/password"
+            android:drawableRight="@drawable/psw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="PASSWORD" />

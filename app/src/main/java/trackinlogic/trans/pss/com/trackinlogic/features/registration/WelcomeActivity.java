@@ -29,10 +29,18 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         viewFlipper.startFlipping();
         viewFlipper.setFlipInterval(2000);
         btnLogin.setOnClickListener(this);
+        btnSignup.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-startActivity(LoginActivity.getStartIntent(this));
+        switch (view.getId()) {
+            case R.id.wel_btn_login:
+                startActivity(LoginActivity.getStartIntent(this));
+                break;
+            case R.id.wel_btn_signup:
+            startActivity(RegistrationActivity.getStartIntent(this));
+            break;
+        }
     }
 }
