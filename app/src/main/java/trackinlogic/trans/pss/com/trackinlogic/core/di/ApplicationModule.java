@@ -8,7 +8,7 @@ import com.memoizrlabs.ShankModule;
 import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import trackinlogic.trans.pss.com.trackinlogic.utils.LocalStorage;
+import trackinlogic.trans.pss.com.trackinlogic.util.LocalStorage;
 
 import static com.memoizrlabs.Shank.registerFactory;
 import static com.memoizrlabs.Shank.registerNamedFactory;

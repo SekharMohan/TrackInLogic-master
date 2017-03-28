@@ -7,4 +7,40 @@
     <string name="sign_up">Signup</string>
     <string name="log_book">log book</string>
     <string name="log_sheet">log sheet</string>
+    <string name="log_settings">Log settings</string>
+    <string name="enter_your_dot_number_so_we_can">Enter your DOT # so we can fill in the Carrier Name and Address on your logs</string>
+    <string name="dont_have_a_dot_number">"Don't have a DOT #?"</string>
+    <string name="dont_know_your_dot_number">"Don't know your DOT #?"</string>
+    <string name="dont_see_your_carrier">"Don't see your Carrier?"</string>
+    <string name="dont_want_to_connect_with">"Don't want to connect with"</string>
+    <string name="dont_want_to_connect_with_this_company">"Don't want to connect with this company?"</string>
+    <string name="enter_carrier_details">Enter Carrier Details</string>
+    <string name="enter_carrier_details_manually">Enter Carrier Details Manually</string>
+    <string name="select_your_carrier">Select your Carrier</string>
+    <string name="select_your_company">Select your Company</string>
+    <string name="select_your_time_zone_and_cycle_rule">Select your Time Zone and Cycle Rule</string>
+    <string name="home_terminal_address">Home Terminal Address</string>
+    <string name="home_terminal_city_hint">City</string>
+    <string name="home_terminal_state_hint">State</string>
+    <string name="home_terminal_street_hint">Street</string>
+    <string name="home_terminal_time_zone">Home Terminal Time Zone</string>
+    <string name="home_terminal_zip_hint">Zip</string>
+    <string name="cycle_rule">Cycle Rule</string>
+    <string name="cycle_rule_selection">Select Cylce Rule</string>
+    <string name="odometer_selection">Select odometer</string>
+    <string name="time_zone_selection">Select Time zone</string>
+    <string name="state_selection">Select State</string>
+
+    <string name="minutes">minutes</string>
+    <string name="minutes_15">15 Minutes Before Violation</string>
+    <string name="minutes_30">30 Minutes Before Violation</string>
+    <string name="minutes_45">45 Minutes Before Violation</string>
+    <string name="mirrors">Mirrors</string>
+    <string name="never">Never</string>
+    <string name="hour_1">1 Hour Before Violation</string>
+    <string name="hour_restart"> Hour Restart </string>
+    <string name="hour_restart_on">Hour Restart on</string>
+    <string name="messages_today">Today</string>
+    <string name="messages_yesterday">Yesterday</string>
+
 </resources>

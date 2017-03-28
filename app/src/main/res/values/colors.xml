@@ -5,8 +5,43 @@
     <color name="colorAccent">#FFEF0D11</color>
     <color name="colorErro">#FFEF0D11</color>
     <color name="material_teal">#E1B721</color>
-
+<color name="colorGray">#FFB7B6B0</color>
 
     <color name="transparent">#00000000</color>
 
+    <!--log book-->
+    <color name="primary_blue">#ff4a88c2</color>
+    <color name="primary_blue_alpha_10">#1a4a88c2</color>
+    <color name="primary_blue_alpha_20">#334a88c2</color>
+    <color name="primary_blue_alpha_35">#594a88c2</color>
+    <color name="primary_blue_alpha_50">#804a88c2</color>
+    <color name="primary_dark_material_dark">@android:color/black</color>
+    <color name="primary_dark_material_light">@color/material_grey_600</color>
+    <color name="primary_green">#ff79b440</color>
+    <color name="primary_grey">#ff585858</color>
+    <color name="primary_material_dark">@color/material_grey_900</color>
+    <color name="primary_material_light">@color/material_grey_100</color>
+    <color name="primary_red">#ffe15f5f</color>
+    <color name="primary_red_alpha_20">#33e15f5f</color>
+    <color name="primary_red_alpha_50">#80e15f5f</color>
+    <color name="log_chart_dial">@color/primary_grey</color>
+    <color name="log_chart_event_line">@color/primary_blue</color>
+    <color name="log_chart_event_line_dim">@color/primary_blue_alpha_35</color>
+    <color name="log_chart_event_region_highlight">@color/primary_blue_alpha_10</color>
+    <color name="log_chart_remark_line">@color/secondary_grey</color>
+    <color name="log_chart_remark_line_selected">@color/primary_grey</color>
+    <color name="log_chart_reset_line">@color/primary_green</color>
+    <color name="log_chart_reset_line_selected">@color/primary_green</color>
+    <color name="log_chart_violation_line">@color/primary_red</color>
+    <color name="log_chart_violation_line_dim">@color/primary_red_alpha_50</color>
+    <color name="log_chart_violation_region_highlight">@color/primary_red_alpha_20</color>
+    <color name="secondary_blue">#ffeef3f8</color>
+    <color name="secondary_green">#fff1f7ec</color>
+    <color name="secondary_grey">#ff787878</color>
+    <color name="secondary_red">#fffcefef</color>
+    <color name="white">#fffefefe</color>
+    <color name="light_grey_1">#ffaaaaaa</color>
+    <color name="light_grey_2">#ffcccccc</color>
+    <color name="light_grey_3">#ffdddddd</color>
+    <color name="light_grey_4">#fffafafa</color>
 </resources>

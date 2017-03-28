@@ -19,13 +19,14 @@
     </LinearLayout>
 
     <ScrollView
+        android:layout_marginBottom="24dp"
         android:layout_width="fill_parent"
         android:scrollbars="none"
         android:layout_height="match_parent">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:orientation="vertical">
 
@@ -167,7 +168,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/userName">
 
                 <EditText
-                    android:drawableRight="@drawable/password"
+                    android:drawableRight="@drawable/psw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password" />
@@ -186,7 +187,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/psw">
 
                 <EditText
-                    android:drawableRight="@drawable/password"
+                    android:drawableRight="@drawable/psw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password" />

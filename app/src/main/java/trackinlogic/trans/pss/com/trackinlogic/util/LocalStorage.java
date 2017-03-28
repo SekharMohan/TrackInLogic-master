@@ -1,4 +1,4 @@
-package trackinlogic.trans.pss.com.trackinlogic.utils;
+package trackinlogic.trans.pss.com.trackinlogic.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
