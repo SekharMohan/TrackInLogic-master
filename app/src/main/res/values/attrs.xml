@@ -3,4 +3,11 @@
 
     <attr name="state_error" format="boolean" />
     <attr name="state_disabled_clickable" format="boolean" />
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
 </resources>

@@ -73,7 +73,7 @@
         android:layout_marginRight="8dp"
         android:textColor="@color/colorAccent"
         android:layout_marginTop="16dp"
-        android:text="Forget password?"
+        android:text="Forgot password?"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
