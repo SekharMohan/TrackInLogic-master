@@ -27,7 +27,7 @@
 
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        android:background="@color/colorGray"
+        android:background="#e5e5e5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
@@ -43,8 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/arrow" />
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/right" />
 
         <TextView
             android:textSize="14sp"
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:text="Company Name"
             android:textStyle="bold"
+            android:textColor="#999999"
             android:layout_toLeftOf="@id/icon"/>
         <TextView
             android:layout_marginTop="8dp"
@@ -61,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
 android:layout_below="@+id/subject"
+            android:textColor="#999999"
             android:text="Address" />
 
     </RelativeLayout>
@@ -86,7 +89,7 @@ android:layout_below="@+id/subject"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/border"
         android:text="@string/enter_carrier_details_manually"
         app:layout_constraintLeft_toLeftOf="parent"

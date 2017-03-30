@@ -4,6 +4,7 @@ package trackinlogic.trans.pss.com.trackinlogic.activities;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -69,44 +70,50 @@ public class LogSheetActivity extends NavigationMenu implements View.OnClickList
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.log_sheet_menu, menu);
+        return true;
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.offDutyStartTime:
-                invokeTimePicker(edtOffDutyStartTime);
+                invokeTimePicker(edtOffDutyStartTime, "Start Time");
                 break;
 
             case R.id.offDutyEndTime:
-                invokeTimePicker(edtOffDutyEndTime);
+                invokeTimePicker(edtOffDutyEndTime, "End Time");
                 break;
 
             case R.id.sleepDutyStartTime:
-                invokeTimePicker(edtSleepBirthStartTime);
+                invokeTimePicker(edtSleepBirthStartTime, "Start Time");
                 break;
 
             case R.id.sleepDutyEndTime:
-                invokeTimePicker(edtSleepBirthEndTime);
+                invokeTimePicker(edtSleepBirthEndTime, "End Time");
                 break;
 
             case R.id.drivingDutyStartTime:
-                invokeTimePicker(edtDrivingDutyStartTime);
+                invokeTimePicker(edtDrivingDutyStartTime, "Start Time");
                 break;
 
             case R.id.drivingDutyEndTime:
-                invokeTimePicker(edtDrivingDutyEndTime);
+                invokeTimePicker(edtDrivingDutyEndTime, "End Time");
                 break;
 
             case R.id.onDutyStartTime:
-                invokeTimePicker(edtOnDutyStartTime);
+                invokeTimePicker(edtOnDutyStartTime, "Start Time");
                 break;
 
             case R.id.onDutyEndTime:
-                invokeTimePicker(edtOnDutyEndTime);
+                invokeTimePicker(edtOnDutyEndTime, "End Time");
                 break;
 
         }
     }
 
-    private void invokeTimePicker(final EditText editTextTimeView) {
+    private void invokeTimePicker(final EditText editTextTimeView, String title) {
         Calendar mCurrentTime = Calendar.getInstance();
         int hour = mCurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mCurrentTime.get(Calendar.MINUTE);
@@ -118,7 +125,7 @@ public class LogSheetActivity extends NavigationMenu implements View.OnClickList
                 editTextTimeView.setText(((selectedHour <= 9) ? "0" + selectedHour : selectedHour) + ":" + ((selectedMinute <= 9) ? "0" + selectedMinute : selectedMinute));
             }
         }, hour, minute, true);//Yes 24 hour time
-        mTimePicker.setTitle("Select Time");
+        mTimePicker.setTitle("Select "+title);
         mTimePicker.show();
     }
 }

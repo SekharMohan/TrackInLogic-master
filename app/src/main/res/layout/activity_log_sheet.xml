@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="7dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
     tools:context=".activities.LogSheetActivity">
 
     <ScrollView
@@ -27,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginTop="3dp"
+                android:layout_marginRight="7dp"
                 android:text="@string/rule_violation" />
 
             <LinearLayout
@@ -34,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginLeft="7dp"
                 android:orientation="horizontal">
 
                 <View
@@ -50,26 +53,29 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
             </LinearLayout>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginLeft="7dp"
+                    >
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/instructionView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
+                        android:textColor="@color/colorPrimary"
                         android:text="@string/instruction_text" />
+
+                    <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
+                        android:id="@+id/chartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="5dp"/>
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/breakIndicationView"
@@ -77,9 +83,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
                         android:text="@string/indication_text"
+                        android:textStyle="bold"
                         android:textColor="@android:color/holo_red_dark" />
 
                     <android.support.v7.widget.AppCompatSpinner
+                        style="@android:style/Widget.Holo.Light.Spinner"
                         android:id="@+id/statusSpinnerView"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
@@ -88,375 +96,492 @@
                         android:prompt="@string/spinner_prompt"/>
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/off_duty_card_view"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="8dp">
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.v7.widget.AppCompatTextView
+                    <TextView
+                        android:background="#e5e5e5"
+                        android:id="@+id/offDutyView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="OFF DUTY"
+                        android:textStyle="bold"
+                        android:textColor="#999999"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/off_duty"
-                        android:textSize="@dimen/abc_text_size_medium_material"
-                        android:textStyle="bold" />
+                        />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp">
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/off_duty_input_layout_sd"
-                            android:layout_width="match_parent"
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/off_duty_start_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
-
+                            android:layout_alignLeft="@+id/offDutyStartTime"
+                            android:layout_marginTop="15dp"
+                            android:text="START TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
                             <EditText
                                 android:id="@+id/offDutyStartTime"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                                android:layout_marginTop="5dp"
+                                android:textSize="13sp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_below="@+id/off_duty_start_view"
+                                android:maxLines="1"
+                                android:drawableRight="@drawable/alarm_clock"
                                 android:hint="@string/start_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/off_duty_input_layout_ed"
-                            android:layout_width="match_parent"
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/off_duty_end_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_alignLeft="@+id/offDutyEndTime"
+                            android:layout_marginTop="15dp"
+                            android:text="END TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
                             <EditText
                                 android:id="@+id/offDutyEndTime"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                                android:layout_marginTop="5dp"
+                                android:textSize="13sp"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/off_duty_end_view"
+                                android:drawableRight="@drawable/alarm_clock"
                                 android:hint="@string/end_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                    <android.support.design.widget.TextInputLayout
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/off_duty_input_layout_dep"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="DEPARTING STATE AND CITY"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                       />
 
                         <EditText
                             android:id="@+id/offDutyDepartingState"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/departing_state" />
-                    </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/off_duty_input_layout_notes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:text="NOTES"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                        />
 
                         <EditText
                             android:id="@+id/offDutyNotes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/notes" />
-                    </android.support.design.widget.TextInputLayout>
+
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/sleep_duty_card_view"
-                android:layout_width="fill_parent"
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="8dp">
+                android:orientation="vertical">
+                    <TextView
+                        android:background="#e5e5e5"
+                        android:id="@+id/sleepBirthView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="SLEEP BIRTH"
+                        android:textStyle="bold"
+                      android:layout_marginTop="10dp"
+                        android:textColor="#999999"
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                        />
 
-                    <android.support.v7.widget.AppCompatTextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sleep_birth"
-                        android:textSize="@dimen/abc_text_size_medium_material"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp">
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/sleep_duty_input_layout_sd"
-                            android:layout_width="match_parent"
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/sleep_duty_start_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_alignLeft="@+id/sleepDutyStartTime"
+                            android:layout_marginTop="15dp"
+                            android:text="START TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
                             <EditText
                                 android:id="@+id/sleepDutyStartTime"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                                android:layout_marginTop="5dp"
+                                android:textSize="13sp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_below="@+id/sleep_duty_start_view"
+                                android:drawableRight="@drawable/alarm_clock"
                                 android:hint="@string/start_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/sleep_duty_input_layout_ed"
-                            android:layout_width="match_parent"
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/sleep_duty_end_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_alignLeft="@+id/sleepDutyEndTime"
+                            android:layout_marginTop="15dp"
+                            android:text="END TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
                             <EditText
                                 android:id="@+id/sleepDutyEndTime"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                                android:layout_marginTop="5dp"
+                                android:textSize="13sp"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/sleep_duty_end_view"
+                                android:drawableRight="@drawable/alarm_clock"
                                 android:hint="@string/end_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                    </LinearLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                    </RelativeLayout>
+
+                <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/sleep_duty_input_layout_dep"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                       android:layout_marginTop="15dp"
+                      android:text="DEPARTING STATE AND CITY"
+                      android:textColor="@color/colorPrimary"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                    android:layout_marginLeft="7dp"
+                      android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/sleepDutyDepartingState"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:hint="@string/departing_state"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"/>
 
-                            android:hint="@string/departing_state" />
-                    </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+                <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/sleep_duty_input_layout_notes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="NOTES"
+                        android:textColor="@color/colorPrimary"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                    android:layout_marginLeft="7dp"
+                        android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/sleepDutyNotes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/notes" />
-                    </android.support.design.widget.TextInputLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/driving_duty_card_view"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="8dp">
+                </LinearLayout>
+
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.v7.widget.AppCompatTextView
+                    <TextView
+                        android:background="#e5e5e5"
+                        android:id="@+id/drivingView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="DRIVING"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#999999"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/driving"
-                        android:textSize="@dimen/abc_text_size_medium_material"
-                        android:textStyle="bold" />
+                        />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp">
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/driving_duty_input_layout_sd"
-                            android:layout_width="match_parent"
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/driving_duty_start_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_alignLeft="@+id/drivingDutyStartTime"
+                            android:layout_marginTop="15dp"
+                            android:text="START TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
-                            <EditText
-                                android:id="@+id/drivingDutyStartTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
-                                android:hint="@string/start_time" />
-                        </android.support.design.widget.TextInputLayout>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/driving_duty_input_layout_ed"
-                            android:layout_width="match_parent"
+                        <EditText
+                            android:id="@+id/drivingDutyStartTime"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/driving_duty_start_view"
+                            android:drawableRight="@drawable/alarm_clock"
+                            android:hint="@string/start_time" />
 
-                            <EditText
-                                android:id="@+id/drivingDutyEndTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
-                                android:hint="@string/end_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                    </LinearLayout>
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/driving_duty_end_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/drivingDutyEndTime"
+                            android:layout_marginTop="15dp"
+                            android:text="END TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
-                    <android.support.design.widget.TextInputLayout
+                        <EditText
+                            android:id="@+id/drivingDutyEndTime"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/driving_duty_end_view"
+                            android:drawableRight="@drawable/alarm_clock"
+                            android:hint="@string/end_time" />
+
+
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/driving_duty_input_layout_dep"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="DEPARTING STATE AND CITY"
+                        android:textColor="@color/colorPrimary"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                        android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/drivingDutyDepartingState"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/departing_state" />
-                    </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/driving_duty_input_layout_notes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="NOTES"
+                        android:textColor="@color/colorPrimary"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                        android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/drivingDutyNotes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/notes" />
-                    </android.support.design.widget.TextInputLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/on_duty_card_view"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="8dp">
+                </LinearLayout>
+
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.v7.widget.AppCompatTextView
+                    <TextView
+                        android:background="#e5e5e5"
+                        android:id="@+id/onDutyView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="ON DUTY"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#999999"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/on_duty"
-                        android:textSize="@dimen/abc_text_size_medium_material"
-                        android:textStyle="bold" />
+                        />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp">
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/on_duty_input_layout_sd"
-                            android:layout_width="match_parent"
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/on_duty_start_view"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_alignLeft="@+id/onDutyStartTime"
+                            android:layout_marginTop="15dp"
+                            android:text="START TIME"
 
-                            <EditText
-                                android:id="@+id/onDutyStartTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
-                                android:hint="@string/start_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/on_duty_input_layout_ed"
-                            android:layout_width="match_parent"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
+
+                        <EditText
+                            android:id="@+id/onDutyStartTime"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/on_duty_start_view"
+                            android:drawableRight="@drawable/alarm_clock"
+                            android:hint="@string/start_time" />
 
-                            <EditText
-                                android:id="@+id/onDutyEndTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@android:drawable/ic_menu_my_calendar"
-                                android:hint="@string/end_time" />
-                        </android.support.design.widget.TextInputLayout>
 
-                    </LinearLayout>
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/on_duty_end_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/onDutyEndTime"
+                            android:layout_marginTop="15dp"
+                            android:text="END TIME"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"/>
 
-                    <android.support.design.widget.TextInputLayout
+                        <EditText
+                            android:id="@+id/onDutyEndTime"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/on_duty_end_view"
+                            android:drawableRight="@drawable/alarm_clock"
+                            android:hint="@string/end_time" />
+
+
+                    </RelativeLayout>
+
+
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/on_duty_input_layout_dep"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="DEPARTING STATE AND CITY"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/onDutyDepartingState"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
                             android:hint="@string/departing_state" />
-                    </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
+
+                    <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/on_duty_input_layout_notes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="NOTES"
 
-                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+                        android:layout_marginLeft="7dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"/>
 
                         <EditText
                             android:id="@+id/onDutyNotes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
+                            android:layout_marginRight="7dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
                             android:hint="@string/notes" />
-                    </android.support.design.widget.TextInputLayout>
+
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 </android.support.v7.widget.LinearLayoutCompat>

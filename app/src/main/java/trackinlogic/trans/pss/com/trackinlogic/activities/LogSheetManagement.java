@@ -1,8 +1,10 @@
 package trackinlogic.trans.pss.com.trackinlogic.activities;
 
-import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatButton;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -46,20 +48,29 @@ public class LogSheetManagement extends NavigationMenu implements View.OnClickLi
     }
 
     private void invokeDialog(int resId, String title){
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(resId, null);
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.setTitle(title);
+        dialogBuilder.setIcon(R.mipmap.ic_launcher);
 
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(resId);
-        dialog.setTitle(title);
-        /*Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-        // if button is clicked, close the custom dialog
-        dialogButton.setOnClickListener(new OnClickListener() {
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(DialogInterface dialog, int which) {
+
                 dialog.dismiss();
             }
-        });*/
+        });
+        dialogBuilder.setNegativeButton("Cancel",  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-        dialog.show();
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
     }
 
 

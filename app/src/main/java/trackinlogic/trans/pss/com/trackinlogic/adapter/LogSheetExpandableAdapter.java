@@ -82,17 +82,21 @@ public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
         AppCompatTextView driverDayView = (AppCompatTextView) convertView.findViewById(R.id.driver_day_view);
         AppCompatTextView driverDateView = (AppCompatTextView) convertView.findViewById(R.id.driver_date_view);
         AppCompatTextView driverDurationView = (AppCompatTextView) convertView.findViewById(R.id.driver_duration_view);
-
+        ImageView indicatorImage = (ImageView) convertView.findViewById(R.id.indicatorImage);
         LogBookHeader logBookHeader = headerList.get(groupPosition);
 
-
+        if (isExpanded) {
+            indicatorImage.setImageResource(R.drawable.down);
+        } else {
+            indicatorImage.setImageResource(R.drawable.right);
+        }
 
         driverDayView.setText(!TextUtils.isEmpty(logBookHeader.getDay()) ?
-                logBookHeader.getDay()+" , " : "");
+                logBookHeader.getDay()+",  " : "");
         driverDateView.setText(!TextUtils.isEmpty(logBookHeader.getDate()) ?
-                logBookHeader.getDate()+" , " : "");
+                logBookHeader.getDate() : "");
         driverDurationView.setText(!TextUtils.isEmpty(logBookHeader.getDuration()) ?
-                logBookHeader.getDuration() : "");
+                logBookHeader.getDuration()+",  " : "");
 
         return convertView;
 

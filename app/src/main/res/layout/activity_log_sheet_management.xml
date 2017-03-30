@@ -1,96 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginBottom="10dp"
     tools:context=".activities.LogSheetManagement">
-    <android.support.v7.widget.CardView
+    <ScrollView
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+           >
+
+
+            <TextView
+                android:background="#e5e5e5"
+                android:id="@+id/generalInfoView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="GENERAL INFO"
+                android:textStyle="bold"
+                android:layout_marginRight="0dp"
+                android:textColor="#999999"
+                android:layout_marginLeft="0dp"
+                 />
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        >
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/textViewGeneralInfo"
+                android:id="@+id/textViewVehicles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="General Info:"
-                android:textColor="#000000"
-                android:textSize="@dimen/abc_text_size_medium_material"
-                android:textStyle="bold" />
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_vehicles_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:text="VEHICLES"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                 />
+
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/vehiclesNumberView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:hint="Vehicles Number"
+                    android:layout_marginTop="5dp"
+                    android:hint="Vehicle Numbers"
+                    android:textSize="13sp"
                     android:maxLines="1"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_trailers_num"
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewTrailers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="TRAILERS"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/trailersNumberView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Trailer Numbers"
+                    android:textSize="13sp"
+                    android:maxLines="1" />
+
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/textViewBeginning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="ODOMETER"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp"
+                    />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/trailersNumbeView"
-                    android:layout_width="match_parent"
+                    android:id="@+id/odometerBegnningView"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:hint="Beginning"
+                    android:maxLines="1"
+                    android:textSize="13sp" />
 
-                    android:hint="Trailers Number"
-                    android:maxLines="1" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/input_layout_odeometer_beginning"
-                    android:layout_width="wrap_content"
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/odometerEndingView"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5">
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:hint="Ending"
+                    android:maxLines="1"
+                    android:textSize="13sp" />
 
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/odometerBegnningView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:hint="Beginning of odometer"
-                        android:maxLines="1"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/input_layout_odometer_ending"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5">
 
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/odometerEndingView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-android:layout_weight="0.5"
-                        android:hint="Ending of odometer"
-                        android:maxLines="1" />
-                </android.support.design.widget.TextInputLayout>
-            </android.support.v7.widget.LinearLayoutCompat>
+            </RelativeLayout>
 
 
             <android.support.v7.widget.AppCompatTextView
@@ -98,48 +128,64 @@ android:layout_weight="0.5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="10dp"
-                android:text="Distance travelled"
-                android:textColor="#000000"
-                android:textSize="16sp">
-
-            </android.support.v7.widget.AppCompatTextView>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_shipping_num"
+                android:layout_marginTop="20dp"
+                android:text="DISTANCE TRAVELLED"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"/>
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/total_kilometres_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:hint="Total kilometres driving"
+                android:maxLines="1" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/shipping_document_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:text="SHIPPING DOCUMENTS"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"/>
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/shippingDocumentNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
                     android:hint="Shipping Document Number"
                     android:maxLines="1" />
-            </android.support.design.widget.TextInputLayout>
+
 
         </android.support.v7.widget.LinearLayoutCompat>
-    </android.support.v7.widget.CardView>
+
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/dvinsButton"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:text="@string/dvins"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="30dp"
+        android:background="@drawable/border"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@color/colorPrimary"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/signButton"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:text="@string/sign"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/border"
+        android:textColor="@color/colorPrimary"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColor="@android:color/white"/>
+        />
+        </LinearLayout>
+    </ScrollView>
 </android.support.v7.widget.LinearLayoutCompat>

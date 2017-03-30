@@ -8,7 +8,7 @@
     <trackinlogic.trans.pss.com.trackinlogic.widgets.CaptureSignatureView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#F2F2F2" />
+        android:background="#999999" />
 
     <CheckBox
         android:id="@+id/saveLoginCheckBox"

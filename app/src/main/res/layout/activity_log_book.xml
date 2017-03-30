@@ -12,5 +12,6 @@
         android:layout_height="match_parent"
         android:divider="#808080"
         android:dividerHeight="1dp"
-        android:id="@+id/expandable_log_sheet"/>
+        android:id="@+id/expandable_log_sheet"
+        android:groupIndicator="@null"/>
 </android.support.v7.widget.LinearLayoutCompat>
