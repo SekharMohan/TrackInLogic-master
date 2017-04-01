@@ -169,19 +169,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/dvins"
-        android:background="@drawable/border"
+
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/button_click_effect"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/signButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign"
-        android:background="@drawable/border"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/button_click_effect"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

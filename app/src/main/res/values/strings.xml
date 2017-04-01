@@ -5,9 +5,10 @@
     <!--Navigation Drawer-->
     <string name="login">SignIn</string>
     <string name="sign_up">Signup</string>
-    <string name="log_book">Log book</string>
-    <string name="log_sheet">Log sheet</string>
-    <string name="log_settings">Log settings</string>
+    <string name="log_book">Log Book</string>
+    <string name="log_sheet">Log Sheet</string>
+    <string name="log_sheet_inspection">Log Sheet Inspection</string>
+    <string name="log_settings">Log Settings</string>
     <string name="enter_your_dot_number_so_we_can">Enter your DOT # so we can fill in the Carrier Name and Address on your logs</string>
     <string name="dont_have_a_dot_number">"Don't have a DOT #?"</string>
     <string name="dont_know_your_dot_number">"Don't know your DOT #?"</string>

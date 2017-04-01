@@ -1,5 +1,6 @@
 package trackinlogic.trans.pss.com.trackinlogic.activities;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -14,6 +15,8 @@ import trackinlogic.trans.pss.com.trackinlogic.NavigationMenu;
 import trackinlogic.trans.pss.com.trackinlogic.R;
 import trackinlogic.trans.pss.com.trackinlogic.adapter.LogSheetExpandableAdapter;
 import trackinlogic.trans.pss.com.trackinlogic.model.LogBookHeader;
+
+import static android.R.attr.width;
 
 public class LogBookActivity extends NavigationMenu {
 
@@ -39,12 +42,27 @@ public class LogBookActivity extends NavigationMenu {
         headerItems = new ArrayList<LogBookHeader>();
         logSheetExpandable = (ExpandableListView)findViewById(R.id.expandable_log_sheet);
         addToLogSheetHeader();
+        logSheetExpandable.setIndicatorBounds(width - this.getDipsFromPixel(70), width
+                - this.getDipsFromPixel(5));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            logSheetExpandable.setIndicatorBoundsRelative(width - this.getDipsFromPixel(70), width
+                    - this.getDipsFromPixel(5));
+        }
+
         LogSheetExpandableAdapter expListAdapter = new LogSheetExpandableAdapter(
                 this, headerItems);
         logSheetExpandable.setAdapter(expListAdapter);
         setTitle(R.string.log_book);
         setActionToViews();
     }
+
+    public int getDipsFromPixel(float pixels) {
+        // Get the screen's density scale
+        float scale = this.getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
+    }
+
 
     private void setActionToViews() {
         logSheetExpandable.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {

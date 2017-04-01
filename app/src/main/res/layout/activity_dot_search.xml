@@ -81,7 +81,7 @@ android:layout_below="@+id/subject"
         app:layout_constraintTop_toBottomOf="@+id/carrierAddress" />
 
     <Button
-        android:textColor="@color/colorAccent"
+
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:id="@+id/btnManual"
@@ -90,7 +90,8 @@ android:layout_below="@+id/subject"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/border"
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/button_click_effect"
         android:text="@string/enter_carrier_details_manually"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

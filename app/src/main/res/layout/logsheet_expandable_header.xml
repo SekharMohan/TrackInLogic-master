@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/docImage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="7dp"
 
         android:contentDescription="@string/app_name"
-        android:src="@drawable/record" />
+        android:src="@drawable/expandable_doc" />
 
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -105,10 +105,10 @@
 
     <ImageView
         android:id="@+id/indicatorImage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="2dp"
+        android:layout_marginRight="7dp"
         android:contentDescription="@string/app_name" />
 </RelativeLayout>
