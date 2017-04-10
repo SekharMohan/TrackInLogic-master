@@ -49,7 +49,7 @@ public class DotSearchActivity extends BaseActivity implements View.OnClickListe
             case R.id.carrierAddress:
                 startActivity(TimeAndCircleActivity.getStartIntent(this));
                 break;
-            case R.id.regManual:
+            case R.id.btnManual:
                 startActivity(ManualCarrierDetailsActivity.getStartIntent(this));
                 break;
         }

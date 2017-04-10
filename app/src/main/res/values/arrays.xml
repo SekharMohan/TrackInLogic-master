@@ -59,4 +59,9 @@
     <item name="atlanda">Atlanda</item>
     <item name="texas">Texas</item>
 </string-array>
+
+    <string-array name="deviceType">
+        <item name = "private">PRIVATE</item>
+        <item name = "team">TEAM</item>
+    </string-array>
 </resources>

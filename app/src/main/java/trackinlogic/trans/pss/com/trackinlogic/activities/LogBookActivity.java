@@ -1,24 +1,36 @@
 package trackinlogic.trans.pss.com.trackinlogic.activities;
 
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
+import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 
-
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import trackinlogic.trans.pss.com.trackinlogic.NavigationMenu;
 import trackinlogic.trans.pss.com.trackinlogic.R;
 import trackinlogic.trans.pss.com.trackinlogic.adapter.LogSheetExpandableAdapter;
 import trackinlogic.trans.pss.com.trackinlogic.model.LogBookHeader;
 
-import static android.R.attr.width;
-
 public class LogBookActivity extends NavigationMenu {
+    private LogBookActivity binding;
+    private Animation fabOpenAnimation;
+    private Animation fabCloseAnimation;
+    private boolean isFABOpen = false;
+    @BindView(R.id.fab)
+    FloatingActionButton fab ;
+    @BindView(R.id.fab1)
+    FloatingActionButton fab1;
+    @BindView(R.id.fab2)
+    FloatingActionButton fab2;
 
     ArrayList<LogBookHeader> headerItems;
     private ExpandableListView logSheetExpandable;
@@ -42,18 +54,55 @@ public class LogBookActivity extends NavigationMenu {
         headerItems = new ArrayList<LogBookHeader>();
         logSheetExpandable = (ExpandableListView)findViewById(R.id.expandable_log_sheet);
         addToLogSheetHeader();
-        logSheetExpandable.setIndicatorBounds(width - this.getDipsFromPixel(70), width
-                - this.getDipsFromPixel(5));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            logSheetExpandable.setIndicatorBoundsRelative(width - this.getDipsFromPixel(70), width
-                    - this.getDipsFromPixel(5));
-        }
 
+
+
+        setTitle(R.string.log_book);
+        setActionToViews();
+        init();
+    }
+
+    private void init() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+
+        this.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int width = metrics.widthPixels;
+
+
+
+        this.logSheetExpandable.setIndicatorBounds(width - GetPixelFromDips(70), width - GetPixelFromDips(20));
+        this.logSheetExpandable.setIndicatorBoundsRelative(width - GetPixelFromDips(70), width - GetPixelFromDips(20));
         LogSheetExpandableAdapter expListAdapter = new LogSheetExpandableAdapter(
                 this, headerItems);
         logSheetExpandable.setAdapter(expListAdapter);
-        setTitle(R.string.log_book);
-        setActionToViews();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!isFABOpen){
+                    showFABMenu();
+                }else{
+                    closeFABMenu();
+                }
+            }
+        });
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeFABMenu();
+                startActivity(new Intent(getApplicationContext(),LogSheetInspection.class));
+
+
+            }
+        });
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeFABMenu();
+                startActivity(new Intent(getApplicationContext(),LogSheetManagement.class));
+            }
+        });
     }
 
     public int getDipsFromPixel(float pixels) {
@@ -65,14 +114,33 @@ public class LogBookActivity extends NavigationMenu {
 
 
     private void setActionToViews() {
+logSheetExpandable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        System.out.println();
+    }
+});
         logSheetExpandable.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long id) {
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 return false;
             }
         });
     }
+    private void showFABMenu(){
+        isFABOpen=true;
+        fab1.animate().translationY(-getResources().getDimension(R.dimen.standard_75));
+        fab2.animate().translationX(-getResources().getDimension(R.dimen.standard_75));
+            }
 
+    private void closeFABMenu(){
+        if(isFABOpen) {
+            isFABOpen = false;
+            fab1.animate().translationY(0);
+            fab2.animate().translationX(0);
+        }
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.log_book_menu, menu);
@@ -89,4 +157,20 @@ public class LogBookActivity extends NavigationMenu {
             headerItems.add(logBookHeader);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if(!isFABOpen){
+          super.onBackPressed();
+        }else{
+            closeFABMenu();
+        }
+    }
+    private int GetPixelFromDips(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
+    }
+
 }

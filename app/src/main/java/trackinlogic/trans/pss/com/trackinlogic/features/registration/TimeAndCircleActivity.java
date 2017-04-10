@@ -16,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
 import trackinlogic.trans.pss.com.trackinlogic.R;
+import trackinlogic.trans.pss.com.trackinlogic.activities.LogBookActivity;
 
 public class TimeAndCircleActivity extends BaseActivity {
     @BindView(R.id.actionbar_right_icon)
@@ -52,6 +53,13 @@ public class TimeAndCircleActivity extends BaseActivity {
         spinnerSetup(spinnerCycleRule,arrCycleRule,getString(R.string.cycle_rule_selection));
         spinnerSetup(spinnerOdometer,arrOdoMeter,getString(R.string.odometer_selection));
         spinnerSetup(spinnerTimeZone,arrTimeZone,getString(R.string.time_zone_selection));
+
+        iViewNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TimeAndCircleActivity.this,LogBookActivity.class));
+            }
+        });
     }
 
     public void spinnerSetup(Spinner spinner,String[] values,String hint){

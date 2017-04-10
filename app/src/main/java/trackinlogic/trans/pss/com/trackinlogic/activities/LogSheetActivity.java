@@ -3,6 +3,7 @@ package trackinlogic.trans.pss.com.trackinlogic.activities;
 
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.View;
@@ -25,6 +26,7 @@ public class LogSheetActivity extends NavigationMenu implements View.OnClickList
 
     private EditText edtOffDutyStartTime, edtOffDutyEndTime, edtSleepBirthStartTime, edtSleepBirthEndTime, edtDrivingDutyStartTime,
             edtDrivingDutyEndTime, edtOnDutyStartTime, edtOnDutyEndTime;
+    private View toolBarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,22 @@ public class LogSheetActivity extends NavigationMenu implements View.OnClickList
         initInitializer();
 
         setTitle(R.string.log_sheet);
+        toolBarView = getSupportActionBar().getCustomView();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LogSheetActivity.this.onBackPressed();
+            }
+        });
+
+
+
     }
+
+
 
     private void initInitializer() {
         edtOffDutyStartTime = (EditText)findViewById(R.id.offDutyStartTime);

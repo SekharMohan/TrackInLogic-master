@@ -32,5 +32,12 @@
 
     <dimen name="profile_width">75dp</dimen>
     <dimen name="profile_height">75dp</dimen>
+    <!--Fab-->
+    <dimen name="standard_55">55dp</dimen>
+    <dimen name="standard_105">105dp</dimen>
+    <dimen name="standard_155">155dp</dimen>
+    <dimen name="standard_45">45dp</dimen>
+    <dimen name="standard_21">21dp</dimen>
+    <dimen name="standard_75">75dp</dimen>
 
 </resources>

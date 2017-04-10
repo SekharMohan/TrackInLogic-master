@@ -1,15 +1,15 @@
 package trackinlogic.trans.pss.com.trackinlogic.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import trackinlogic.trans.pss.com.trackinlogic.NavigationMenu;
 import trackinlogic.trans.pss.com.trackinlogic.R;
@@ -37,6 +37,15 @@ public class LogSheetInspection extends NavigationMenu {
         FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.content_frame);
         getLayoutInflater().inflate(R.layout.activity_log_sheet_inspection, contentFrameLayout);
         setTitle(R.string.log_sheet_inspection);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LogSheetInspection.this.onBackPressed();
+            }
+        });
         inspectionRecyclerView = (RecyclerView)findViewById(R.id.inspectionRecyclerView);
         ButterKnife.bind(this);
         inspectionRowItems = new ArrayList<LogBookHeader>();

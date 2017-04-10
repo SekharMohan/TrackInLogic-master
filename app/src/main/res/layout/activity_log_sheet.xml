@@ -17,11 +17,14 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/ruleViolationView"
                 android:layout_width="wrap_content"
@@ -68,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
                         android:text="@string/instruction_text" />
 
                     <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
@@ -133,7 +136,7 @@
                             android:layout_alignLeft="@+id/offDutyStartTime"
                             android:layout_marginTop="15dp"
                             android:text="START TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
                             <EditText
                                 android:id="@+id/offDutyStartTime"
@@ -156,7 +159,7 @@
                             android:layout_alignLeft="@+id/offDutyEndTime"
                             android:layout_marginTop="15dp"
                             android:text="END TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                             <EditText
@@ -179,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="DEPARTING STATE AND CITY"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
                         android:textSize="13sp"
 
                         android:layout_marginLeft="7dp"
@@ -201,7 +204,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
                         android:textSize="13sp"
                         android:text="NOTES"
 
@@ -254,7 +257,7 @@
                             android:layout_alignLeft="@+id/sleepDutyStartTime"
                             android:layout_marginTop="15dp"
                             android:text="START TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                             <EditText
@@ -276,7 +279,7 @@
                             android:layout_alignLeft="@+id/sleepDutyEndTime"
                             android:layout_marginTop="15dp"
                             android:text="END TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                             <EditText
@@ -299,7 +302,7 @@
                         android:layout_height="wrap_content"
                        android:layout_marginTop="15dp"
                       android:text="DEPARTING STATE AND CITY"
-                      android:textColor="@color/colorPrimary"
+                      android:textColor="@color/colorAccent"
 
                     android:layout_marginLeft="7dp"
                       android:textSize="13sp"/>
@@ -321,7 +324,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="NOTES"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
 
                     android:layout_marginLeft="7dp"
                         android:textSize="13sp"/>
@@ -374,7 +377,7 @@
                             android:layout_alignLeft="@+id/drivingDutyStartTime"
                             android:layout_marginTop="15dp"
                             android:text="START TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                         <EditText
@@ -396,7 +399,7 @@
                             android:layout_alignLeft="@+id/drivingDutyEndTime"
                             android:layout_marginTop="15dp"
                             android:text="END TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                         <EditText
@@ -419,7 +422,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="DEPARTING STATE AND CITY"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
 
                         android:layout_marginLeft="7dp"
                         android:textSize="13sp"/>
@@ -441,7 +444,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="NOTES"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
 
                         android:layout_marginLeft="7dp"
                         android:textSize="13sp"/>
@@ -496,7 +499,7 @@
                             android:text="START TIME"
 
 
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                         <EditText
@@ -518,7 +521,7 @@
                             android:layout_alignLeft="@+id/onDutyEndTime"
                             android:layout_marginTop="15dp"
                             android:text="END TIME"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13sp"/>
 
                         <EditText
@@ -545,7 +548,7 @@
                         android:text="DEPARTING STATE AND CITY"
 
                         android:layout_marginLeft="7dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
                         android:textSize="13sp"/>
 
                         <EditText
@@ -567,7 +570,7 @@
                         android:text="NOTES"
 
                         android:layout_marginLeft="7dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorAccent"
                         android:textSize="13sp"/>
 
                         <EditText

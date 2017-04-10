@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
+    android:focusable="false"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:layout_margin="@dimen/abc_button_padding_horizontal_material">
+    >
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
+        android:layout_above="@+id/child"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 <ImageView
+    android:paddingRight="16dp"
     android:id="@+id/editView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -14,6 +23,8 @@
     android:layout_alignParentRight="true"
     />
 <android.support.v7.widget.LinearLayoutCompat
+    android:padding="16dp"
+    android:id="@+id/child"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -197,4 +208,12 @@
             />
     </LinearLayout>
 </android.support.v7.widget.LinearLayoutCompat>
+
+        <View
+            android:background="@color/colorGray"
+            android:layout_below="@+id/child"
+            android:id="@+id/childview"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+    </RelativeLayout>
 </RelativeLayout>

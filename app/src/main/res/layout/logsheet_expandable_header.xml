@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:focusable="false"
+   >
 
-    android:padding="8dp">
+<RelativeLayout
+
+
+    android:padding="16dp"
+    android:id="@+id/head_group"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
     <ImageView
+        android:backgroundTint="@color/colorGray"
+android:layout_alignLeft="@+id/head"
         android:id="@+id/docImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="7dp"
 
+
         android:contentDescription="@string/app_name"
         android:src="@drawable/expandable_doc" />
 
-
     <android.support.v7.widget.LinearLayoutCompat
+
+        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/docImage"
+        android:id="@+id/head"
+
         android:orientation="vertical">
 
         <android.support.v7.widget.LinearLayoutCompat
@@ -102,13 +116,11 @@
                 android:textStyle="bold" />
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.LinearLayoutCompat>
+</RelativeLayout>
 
-    <ImageView
-        android:id="@+id/indicatorImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="7dp"
-        android:contentDescription="@string/app_name" />
+<View
+    android:layout_below="@+id/head_group"
+    android:id="@+id/headview"
+    android:layout_width="match_parent"
+    android:layout_height="5dp"/>
 </RelativeLayout>

@@ -4,16 +4,13 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_eld"
-
             android:title="ELD" />
         <item
             android:id="@+id/nav_engine_inspec"
-
-            android:title="Engine Inspection" />
+            android:title="ENGINE INSPECTION" />
         <item
             android:id="@+id/nav_navigation"
-
-            android:title="Navigation" />
+            android:title="NAVIGATION" />
 
     </group>
 

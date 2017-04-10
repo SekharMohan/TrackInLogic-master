@@ -11,16 +11,13 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 
-
 import java.util.ArrayList;
 
 import trackinlogic.trans.pss.com.trackinlogic.R;
 import trackinlogic.trans.pss.com.trackinlogic.activities.LogSheetActivity;
 import trackinlogic.trans.pss.com.trackinlogic.model.LogBookHeader;
 
-/**
- * Created by DELL on 26-03-2017.
- */
+
 
 public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
 
@@ -79,17 +76,14 @@ public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
             convertView = inflaInflater.inflate(R.layout.logsheet_expandable_header,
                     null);
         }
+        View view = convertView.findViewById(R.id.headview);
         AppCompatTextView driverDayView = (AppCompatTextView) convertView.findViewById(R.id.driver_day_view);
         AppCompatTextView driverDateView = (AppCompatTextView) convertView.findViewById(R.id.driver_date_view);
         AppCompatTextView driverDurationView = (AppCompatTextView) convertView.findViewById(R.id.driver_duration_view);
-        ImageView indicatorImage = (ImageView) convertView.findViewById(R.id.indicatorImage);
+
         LogBookHeader logBookHeader = headerList.get(groupPosition);
 
-        if (isExpanded) {
-            indicatorImage.setImageResource(R.drawable.down);
-        } else {
-            indicatorImage.setImageResource(R.drawable.right);
-        }
+
 
         driverDayView.setText(!TextUtils.isEmpty(logBookHeader.getDay()) ?
                 logBookHeader.getDay()+",  " : "");
@@ -97,6 +91,12 @@ public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
                 logBookHeader.getDate() : "");
         driverDurationView.setText(!TextUtils.isEmpty(logBookHeader.getDuration()) ?
                 logBookHeader.getDuration()+",  " : "");
+
+        if(isExpanded){
+view.setVisibility(View.GONE);
+        }else {
+            view.setVisibility(View.VISIBLE);
+        }
 
         return convertView;
 
@@ -110,7 +110,7 @@ public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.logsheet_expandable_child, null);
         }
-        ImageView editView = (ImageView)convertView.findViewById(R.id.editView);
+       ImageView editView = (ImageView)convertView.findViewById(R.id.editView);
 
         editView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +125,6 @@ public class LogSheetExpandableAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int i, int i1) {
-        return false;
+        return true;
     }
 }

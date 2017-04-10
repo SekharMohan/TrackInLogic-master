@@ -11,8 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import trackinlogic.trans.pss.com.trackinlogic.activities.LogBookActivity;
-import trackinlogic.trans.pss.com.trackinlogic.activities.LogSheetInspection;
-import trackinlogic.trans.pss.com.trackinlogic.activities.LogSheetManagement;
 
 
 public class NavigationMenu extends AppCompatActivity
@@ -37,7 +35,11 @@ public class NavigationMenu extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+navigationView.setCheckedItem(R.id.nav_eld);
+     /*   if (savedInstanceState == null) {
+            navigationView.getMenu().performIdentifierAction(R.id.nav_eld, 0);
+        }*/
+        /**/
     }
 
 
@@ -82,12 +84,7 @@ public class NavigationMenu extends AppCompatActivity
             case R.id.nav_eld:
                 startActivity(new Intent(getApplicationContext(),LogBookActivity.class));
                 break;
-            case R.id.nav_engine_inspec:
-                startActivity(new Intent(getApplicationContext(),LogSheetInspection.class));
-                break;
-            case R.id.nav_navigation:
-                startActivity(new Intent(getApplicationContext(),LogSheetManagement.class));
-                break;
+
         }
 
 

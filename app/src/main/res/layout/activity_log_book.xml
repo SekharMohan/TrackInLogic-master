@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    android:background="@color/light_grey_1"
+android:padding="8dp"    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.LogBookActivity">
+    android:layout_height="match_parent">
     <ExpandableListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#808080"
-        android:dividerHeight="1dp"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:overScrollMode="never"
         android:id="@+id/expandable_log_sheet"
-        android:groupIndicator="@null"/>
-</android.support.v7.widget.LinearLayoutCompat>
+        />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="@dimen/standard_45"
+        android:layout_height="@dimen/standard_45"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/standard_21"
+        app:srcCompat="@drawable/ic_forum" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="@dimen/standard_45"
+        android:layout_height="@dimen/standard_45"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/standard_21"
+        app:srcCompat="@drawable/ic_log_inspect" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_group_work" />
+
+
+
+</android.support.design.widget.CoordinatorLayout>
