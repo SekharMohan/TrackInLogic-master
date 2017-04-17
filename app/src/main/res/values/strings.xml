@@ -91,5 +91,6 @@
     <string name="sleep_birth">SLEEP BIRTH - </string>
     <string name="driving">DRIVING - </string>
     <string name="on_duty">ON DUTY -</string>
+    <string name="save_sign">Save signature for future reference</string>
 
 </resources>

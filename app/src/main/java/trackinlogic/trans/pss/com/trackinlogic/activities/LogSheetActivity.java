@@ -142,7 +142,7 @@ public class LogSheetActivity extends NavigationMenu implements View.OnClickList
                 editTextTimeView.setText(((selectedHour <= 9) ? "0" + selectedHour : selectedHour) + ":" + ((selectedMinute <= 9) ? "0" + selectedMinute : selectedMinute));
             }
         }, hour, minute, true);//Yes 24 hour time
-        mTimePicker.setTitle("Select "+title);
+
         mTimePicker.show();
     }
 }

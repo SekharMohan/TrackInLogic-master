@@ -87,7 +87,7 @@
                         android:layout_marginTop="7dp"
                         android:text="@string/indication_text"
                         android:textStyle="bold"
-                        android:textColor="@android:color/holo_red_dark" />
+                        android:textColor="@color/colorAccent" />
 
                     <android.support.v7.widget.AppCompatSpinner
                         style="@android:style/Widget.Holo.Light.Spinner"

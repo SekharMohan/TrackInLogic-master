@@ -10,6 +10,16 @@
         android:layout_height="100dp"
         android:background="#999999" />
 
+
+
+    <CheckBox
+        android:id="@+id/save"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/save_sign" />
+
     <CheckBox
         android:id="@+id/saveLoginCheckBox"
         android:layout_width="fill_parent"
