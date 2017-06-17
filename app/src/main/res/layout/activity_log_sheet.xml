@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:paddingTop="7dp"
     android:paddingBottom="7dp"
-    tools:context=".activities.LogSheetActivity">
+    tools:context=".features.logsheet.LogSheetActivity">
 
     <ScrollView
         android:id="@+id/view"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
+            <trackinlogic.trans.pss.com.trackinlogic.features.customview.LogChartView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.support.v7.widget.AppCompatTextView
@@ -74,7 +74,7 @@
                         android:textColor="@color/colorAccent"
                         android:text="@string/instruction_text" />
 
-                    <trackinlogic.trans.pss.com.trackinlogic.view.LogChartView
+                    <trackinlogic.trans.pss.com.trackinlogic.features.customview.LogChartView
                         android:id="@+id/chartView"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"

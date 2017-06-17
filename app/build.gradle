@@ -9,9 +9,12 @@ android {
     defaultConfig {
         applicationId "trackinlogic.trans.pss.com.trackinlogic"
         minSdkVersion 16
+
         targetSdkVersion 25
+        enforceUniquePackageName = false
         versionCode 1
         versionName "1.0"
+        multiDexEnabled  true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
 
@@ -23,7 +26,10 @@ android {
         }
     }
 
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -31,6 +37,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile project(':service')
     compile 'com.github.clans:fab:1.6.2'
     compile 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     compile "com.mixpanel.android:mixpanel-android:4.+"

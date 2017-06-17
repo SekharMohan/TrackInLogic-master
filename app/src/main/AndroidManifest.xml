@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
-            android:name=".features.registration.LoginActivity"
+            android:name=".features.registration.login.LoginActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.WelcomeActivity"
+            android:name=".features.welcome.WelcomeActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,34 +20,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".features.registration.RegistrationActivity"
+            android:name=".features.registration.signup.RegistrationActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.TimeAndCircleActivity"
+            android:name=".features.registration.carrier.carriersetup.TimeAndCircleActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.CarrierRegistrationActivity"
+            android:name=".features.registration.carrier.search.CarrierRegistrationActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.ManualCarrierDetailsActivity"
+            android:name=".features.registration.carrier.manual.ManualCarrierDetailsActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.DotSearchActivity"
+            android:name=".features.registration.carrier.dotsearchresult.DotSearchActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
             android:name=".NavigationMenu"
             android:label="@string/title_activity_navigation_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.LogSheetManagement"
+            android:name=".features.logmanagement.LogSheetManagement"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activities.LogSheetActivity"
+            android:name=".features.logsheet.LogSheetActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activities.LogBookActivity"
+            android:name=".features.logbook.LogBookActivity"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".activities.LogSheetInspection"
+        <activity android:name=".features.loginspection.LogSheetInspection"
             android:theme="@style/MyMaterialTheme"></activity>
     </application>
 

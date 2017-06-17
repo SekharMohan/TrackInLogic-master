@@ -12,7 +12,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <trackinlogic.trans.pss.com.trackinlogic.widgets.CircularImageView
+    <trackinlogic.trans.pss.com.trackinlogic.features.common.widgets.CircularImageView
         android:id="@+id/userImageView"
         android:layout_width="85dp"
         android:layout_height="85dp"

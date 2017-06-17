@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import trackinlogic.trans.pss.com.trackinlogic.activities.LogBookActivity;
+import trackinlogic.trans.pss.com.trackinlogic.features.logbook.LogBookActivity;
 
 
 public class NavigationMenu extends AppCompatActivity

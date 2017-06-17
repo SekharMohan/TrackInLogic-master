@@ -32,3 +32,4 @@ public class ApplicationModule implements ShankModule {
         registerFactory(LocalStorage.class, (String file) -> new LocalStorage(this.context, file));
     }
 }
+

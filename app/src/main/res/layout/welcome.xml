@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#FFE8E8E9"
     android:layout_height="match_parent"
-    tools:context="trackinlogic.trans.pss.com.trackinlogic.features.registration.LoginActivity"
+    tools:context="trackinlogic.trans.pss.com.trackinlogic.features.registration.login.LoginActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -26,7 +26,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="363dp" />
 
-    <trackinlogic.trans.pss.com.trackinlogic.view.CustomViewFlipper
+    <trackinlogic.trans.pss.com.trackinlogic.features.common.customview.CustomViewFlipper
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginRight="8dp"
@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/violation_alerts_with_text"
             />
-    </trackinlogic.trans.pss.com.trackinlogic.view.CustomViewFlipper>
+    </trackinlogic.trans.pss.com.trackinlogic.features.common.customview.CustomViewFlipper>
+
 
     <Button
         android:id="@+id/wel_btn_login"
