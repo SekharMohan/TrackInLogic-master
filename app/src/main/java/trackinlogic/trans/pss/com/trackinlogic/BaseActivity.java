@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import trackinlogic.trans.pss.com.trackinlogic.features.common.customview.Loader;
+import trackinlogic.trans.pss.com.trackinlogic.util.ToastUtil;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -62,5 +64,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void updateNetworkConnectivity() {
+        ToastUtil.showErrorUpdate(this,"Please check internet connectivity");
+
+    }
+public void showLodaing() {
+    Loader.showProgressBar(this);
+}
+public void dismissLoading() {
+    Loader.dismissProgressBar();
+}
 
 }

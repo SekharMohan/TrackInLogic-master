@@ -9,12 +9,13 @@ import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import trackinlogic.trans.pss.com.trackinlogic.util.LocalStorage;
+import trackinlogic.trans.pss.com.trackinlogic.util.NetworkUtil;
 
 import static com.memoizrlabs.Shank.registerFactory;
 import static com.memoizrlabs.Shank.registerNamedFactory;
 public class ApplicationModule implements ShankModule {
 
-    private final Context context;
+    public final Context context;
 
     public static final String IO_SCHEDULER = "io";
     public static final String UI_SCHEDULER = "ui";
@@ -30,6 +31,7 @@ public class ApplicationModule implements ShankModule {
         registerNamedFactory(Scheduler.class, ApplicationModule.UI_SCHEDULER, AndroidSchedulers::mainThread);
         registerFactory(Gson.class, Gson::new);
         registerFactory(LocalStorage.class, (String file) -> new LocalStorage(this.context, file));
+        registerFactory(NetworkUtil.class,()->new NetworkUtil(this.context));
     }
 }
 

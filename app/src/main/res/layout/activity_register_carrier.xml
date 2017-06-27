@@ -112,6 +112,7 @@
             android:layout_weight="1.5">
 
             <EditText
+                android:id="@+id/edtDotNumber"
                 android:layout_marginRight="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

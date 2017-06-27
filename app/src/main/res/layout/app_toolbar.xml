@@ -37,6 +37,7 @@
 
             <ImageView
                 android:id="@+id/actionbar_right_icon"
+                android:imeOptions="actionDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_tick"

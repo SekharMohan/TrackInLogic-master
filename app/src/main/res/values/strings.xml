@@ -92,5 +92,17 @@
     <string name="driving">DRIVING - </string>
     <string name="on_duty">ON DUTY -</string>
     <string name="save_sign">Save signature for future reference</string>
+    <string name="confirm_psw_empty">Please enter the  confirm password</string>
+    <string name="psw_empty">Please enter the password</string>
+    <string name="first_name_empty">Please enter the name</string>
+    <string name="password_invalid">Password must contains 1 caps letter ,1 small letter, 1 number and 1 special character</string>
+    <string name="password_missmatch">Password and confirm password should match</string>
+    <string name="psw_min_limit">Password must be 8 characters</string>
+    <string name="email_invalid">Please enter valid email id</string>
+    <string name="last_name_empty">Please enter the last name</string>
+    <string name="phoneNo_empty">Please enter the phone number</string>
+    <string name="email_empty">Please enter the email id</string>
+    <string name="user_name_empty">Please enter the user name</string>
+    <string name="dotid_find_faild">Unable to find dotId. You may register manually</string>
 
 </resources>
