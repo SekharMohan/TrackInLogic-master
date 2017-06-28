@@ -77,7 +77,7 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     @Override
     public void onGettingAddressSucess(CarrierDetails carrierDetails) {
         dismissLoading();
-        DotSearchActivity.getStartIntent(this);
+        startActivity(DotSearchActivity.getStartIntent(this));
 
     }
 

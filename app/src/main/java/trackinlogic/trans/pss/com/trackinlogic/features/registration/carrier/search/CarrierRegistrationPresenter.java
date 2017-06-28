@@ -31,7 +31,7 @@ public class CarrierRegistrationPresenter extends BasePresenter<CarrierRegistrat
 
                 if(networkStatus.isConnected()) {
                     CarrierQueryString queryString = view.getRequestParams();
-                    repository.onGettingCarrierAddress(queryString.getDotId(),queryString.isDetails(),queryString.isInactive()).subscribeOn(uiScheduler).subscribe(carrierDetails -> {view.onGettingAddressSucess(carrierDetails);},throwable ->{
+                    repository.onGettingCarrierAddress(queryString.getDotId(),queryString.isDetails(),queryString.isInactive()).observeOn(this.uiScheduler).subscribeOn(uiScheduler).subscribe(carrierDetails -> {view.onGettingAddressSucess(carrierDetails);},throwable ->{
                         throwable.printStackTrace();
                         view.onGettingAdressFailure();});
 

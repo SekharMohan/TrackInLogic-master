@@ -1,5 +1,8 @@
 package trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 import trackinlogic.trans.pss.com.trackinlogic.model.login.Phone;
@@ -9,8 +12,30 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.Address;
  * Created by Sekhar Madhiyazhagan on 6/26/2017.
  */
 
-public class CarrierDetails  {
+public class CarrierDetails  implements Parcelable{
         private int id;
+
+        protected CarrierDetails(Parcel in) {
+                id = in.readInt();
+                name = in.readString();
+                groupId = in.readString();
+                description = in.readString();
+                isActive = in.readByte() != 0;
+                dotId = in.readString();
+                status = in.readString();
+        }
+
+        public static final Creator<CarrierDetails> CREATOR = new Creator<CarrierDetails>() {
+                @Override
+                public CarrierDetails createFromParcel(Parcel in) {
+                        return new CarrierDetails(in);
+                }
+
+                @Override
+                public CarrierDetails[] newArray(int size) {
+                        return new CarrierDetails[size];
+                }
+        };
 
         public int getId() { return this.id; }
 
@@ -69,5 +94,21 @@ public class CarrierDetails  {
         public ArrayList<Phone> getPhones() { return this.phones; }
 
         public void setPhones(ArrayList<Phone> phones) { this.phones = phones; }
+
+        @Override
+        public int describeContents() {
+                return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+                dest.writeInt(id);
+                dest.writeString(name);
+                dest.writeString(groupId);
+                dest.writeString(description);
+                dest.writeByte((byte) (isActive ? 1 : 0));
+                dest.writeString(dotId);
+                dest.writeString(status);
+        }
 }
 

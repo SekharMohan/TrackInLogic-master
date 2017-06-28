@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.f2prateek.dart.Dart;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import trackinlogic.trans.pss.com.trackinlogic.features.common.customview.Loader;
@@ -52,6 +54,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private void configureToolbar(View view) {
         ButterKnife.bind(this, view);
+        Dart.inject(this);
         if (this.toolbar != null) {
             this.setSupportActionBar(this.toolbar);
             this.getSupportActionBar().setDisplayShowTitleEnabled(false);

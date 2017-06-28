@@ -78,7 +78,7 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.Registration;
 
         @Override
         public Observable<CarrierDetails> getCarrierDetails(String dotId, boolean details, boolean inactive) {
-            return api.getCarrierDetails(dotId,details,inactive);
+            return api.getCarrierDetails(dotId,details,inactive).subscribeOn(ioScheduler);
         }
 
         private static HttpLoggingInterceptor provideHttpLoggingInterceptor() {
