@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -13,6 +15,8 @@ import com.memoizrlabs.Shank;
 import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.OnClick;
+import butterknife.OnFocusChange;
+import butterknife.OnTextChanged;
 import okhttp3.ResponseBody;
 import rx.Observable;
 import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
@@ -136,6 +140,7 @@ public class RegistrationActivity extends BaseActivity implements RegistrationPr
     public void gotoCarrierRegistrationActivity() {
         dismissLoading();
         startActivity(CarrierRegistrationActivity.getStartIntent(this));
+        finish();
 
     }
 
@@ -172,7 +177,7 @@ public class RegistrationActivity extends BaseActivity implements RegistrationPr
             setError(confirmPswLayout,edtConfirmPassword, getString(R.string.confirm_psw_empty));
             return false;
         } else if (!ValidationUtils.isvalidPhoneNumber(edtPhoneNumber.getText().toString())) {
-            setError(pswLayout,edtPassword, getString(R.string.password_invalid));
+            setError(pswLayout,edtPassword, getString(R.string.phoneNo_invalid));
             return false;
         } else if (!ValidationUtils.isValidEmail(edtEmail.getText().toString())) {
             setError(emailLayout,edtEmail, getString(R.string.email_invalid));
@@ -201,6 +206,53 @@ public class RegistrationActivity extends BaseActivity implements RegistrationPr
         setEditFieldSelection(editText);
         editText.requestFocus();
         textInputLayout.setError(errorMsg);
+        textInputLayout.setErrorEnabled(true);
+
+    }
+
+    @OnTextChanged({R.id.edtFirstName,R.id.edtLastName,R.id.edtPhoneNumber,R.id.edtEmail,R.id.edtUserName,R.id.edtPassword,R.id.edtConfirmPassword})
+
+    void handleFirstNameEdittextError() {
+        resetTextInputErrors(fNameLayout,lNameLayout,phNumberLayout,emailLayout,userNameLayout,pswLayout,confirmPswLayout);
+    }
+
+    @OnFocusChange({R.id.edtFirstName,R.id.edtLastName,R.id.edtPhoneNumber,R.id.edtEmail,R.id.edtUserName,R.id.edtPassword,R.id.edtConfirmPassword})
+    public void EditTextFocustChange(View v,boolean hasFocus) {
+        if(!hasFocus) {
+            resetTextInputError(getTextInputField(v.getId()));
+        }
+
+    }
+    private TextInputLayout getTextInputField(int id) {
+        switch (id) {
+            case R.id.edtFirstName:
+                return fNameLayout;
+            case R.id.edtLastName:
+                return lNameLayout;
+            case R.id.edtPhoneNumber:
+                return phNumberLayout;
+            case R.id.edtEmail:
+                return emailLayout;
+            case R.id.edtUserName:
+                return userNameLayout;
+            case R.id.edtPassword:
+                return pswLayout;
+            case R.id.edtConfirmPassword:
+                return confirmPswLayout;
+        }
+        return null;
+    }
+
+    private void resetTextInputErrors(TextInputLayout ...textInputLayouts) {
+        for(TextInputLayout textInputLayout : textInputLayouts) {
+            resetTextInputError(textInputLayout);
+        }
+    }
+    private void resetTextInputError(TextInputLayout textInputField) {
+        if(textInputField != null && !TextUtils.isEmpty(textInputField.getError())) {
+            textInputField.setError(null);
+            textInputField.setErrorEnabled(false);
+        }
 
     }
 

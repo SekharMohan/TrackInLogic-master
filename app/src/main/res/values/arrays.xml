@@ -1,57 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-<string-array name="timeZone">
-    <item name="timezone_alaska">Alaska</item>
-    <item name="timezone_arizona">Arizona</item>
-    <item name="timezone_atlantic">Atlantic Time (Canada)</item>
-    <item name="timezone_central">Central Time (US &amp; Canada)</item>
-    <item name="timezone_eastern">Eastern Time (US &amp; Canada)</item>
-    <item name="timezone_error">Please choose a Time Zone.</item>
-    <item name="timezone_indiana">Indiana (East)</item>
-    <item name="timezone_mountain">Mountain Time (US &amp; Canada)</item>
-    <item name="timezone_pacific">Pacific Time (US &amp; Canada)</item>
-    <item name="timezone_saskatchewan">Saskatchewan</item>
-</string-array>
-    <string-array name="cycleRule">
-        <item name="cycle_120_14_name">Canada South 120 hour / 14 day (Cycle 2)</item>
-        <item name="cycle_120_14_name_list">Canada South 120 hour / 14 day</item>
-        <item name="cycle_120_14_north_name">Canada North 120 hour / 14 day (Cycle 2)</item>
-        <item name="cycle_120_14_north_name_list">Canada North 120 hour / 14 day</item>
-        <item name="cycle_60_7_name">USA Property 60 hour / 7 day</item>
-        <item name="cycle_60_7_name_list">USA 60 hour / 7 day</item>
-        <item name="cycle_60_7_o_name">USA Oil and Gas 60 hour / 7 day</item>
-        <item name="cycle_60_7_p_name">USA Passenger 60 hour / 7 day</item>
-        <item name="cycle_70_7_name">Canada South 70 hour / 7 day (Cycle 1)</item>
-        <item name="cycle_70_7_name_list">Canada South 70 hour / 7 day</item>
-        <item name="cycle_70_8_name">USA Property 70 hour / 8 day</item>
-        <item name="cycle_70_8_name_list">USA 70 hour / 8 day</item>
-        <item name="cycle_70_8_o_name">USA Oil and Gas 70 hour / 8 day</item>
-        <item name="cycle_70_8_p_name">USA Passenger 70 hour / 8 day</item>
-        <item name="cycle_80_7_name">Canada North 80 hour / 7 day (Cycle 1)</item>
-        <item name="cycle_80_7_name_list">Canada North 80 hour / 7 day</item>
-        <item name="cycle_80_8_name">California Property 80 hour / 8 day</item>
-        <item name="cycle_80_8_name_list">California 80 hour / 8 day</item>
-        <item name="cycle_80_8_o_name">California Oil and Gas 80 hour / 8 day</item>
-        <item name="cycle_80_8_p_name">California Passenger 80 hour / 8 day</item>
-        <item name="cycle_ak_70_7_name">Alaska Property 70 hour / 7 day</item>
-        <item name="cycle_ak_70_7_name_list">Alaska 70 hour / 7 day</item>
-        <item name="cycle_ak_70_7_o_name">Alaska Oil and Gas 70 hour / 7 day</item>
-        <item name="cycle_ak_70_7_p_name">Alaska Passenger 70 hour / 7 day</item>
-        <item name="cycle_ak_80_8_name">Alaska Property 80 hour / 8 day</item>
-        <item name="cycle_ak_80_8_name_list">Alaska 80 hour / 8 day</item>
-        <item name="cycle_ak_80_8_o_name">Alaska Oil and Gas 80 hour / 8 day</item>
-        <item name="cycle_ak_80_8_p_name">Alaska Passenger 80 hour / 8 day</item>
-        <item name="cycle_ca_oil_name">Canada South Oil and Gas</item>
-        <item name="cycle_ca_oil_name_list">Canada South Oil and Gas</item>
-        <item name="cycle_tx_70_7_name">Texas 70 hour / 7 day</item>
-        <item name="cycle_tx_70_7_name_list">Texas 70 hour / 7 day</item>
-        <item name="cycle_other_name">Other</item>
-    </string-array>
-    <string-array name="odoMeter">
-        <item name="kilometers">Kilometers</item>
-        <item name="miles">Miles</item>
-    </string-array>
 <string-array name="state">
     <item name="ny">New York</item>
     <item name="california">California</item>
@@ -59,6 +7,12 @@
     <item name="atlanda">Atlanda</item>
     <item name="texas">Texas</item>
 </string-array>
+
+    <string-array name="country">
+        <item name="us">United States</item>
+        <item name="canada">Canada</item>
+        <item name="mexico">Mexico</item>
+    </string-array>
 
     <string-array name="deviceType">
         <item name = "private">PRIVATE</item>

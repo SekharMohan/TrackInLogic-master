@@ -4,12 +4,7 @@ package trackinlogic.trans.pss.com.trackinlogic.model.registration;
  * Created by Sekhar Madhiyazhagan on 5/27/2017.
  */
 
-public class CycleRule {
-    private String description;
-
-    public String getDescription() { return this.description; }
-
-    public void setDescription(String description) { this.description = description; }
+public class OdoMeterResponse {
 
     private int id;
 

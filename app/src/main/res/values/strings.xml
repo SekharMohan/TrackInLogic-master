@@ -86,7 +86,7 @@
         <item>List of vehicle defects</item>
 
     </string-array>
-
+    <string name="country_selection">Select Country</string>
     <string name="off_duty">OFF DUTY - </string>
     <string name="sleep_birth">SLEEP BIRTH - </string>
     <string name="driving">DRIVING - </string>
@@ -104,5 +104,7 @@
     <string name="email_empty">Please enter the email id</string>
     <string name="user_name_empty">Please enter the user name</string>
     <string name="dotid_find_faild">Unable to find dotId. You may register manually</string>
+    <string name="device_type">Please select device type</string>
+    <string name="phoneNo_invalid">Please enter the valid phone number</string>
 
 </resources>

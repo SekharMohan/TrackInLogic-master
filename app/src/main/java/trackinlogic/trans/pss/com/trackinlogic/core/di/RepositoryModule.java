@@ -2,6 +2,7 @@ package trackinlogic.trans.pss.com.trackinlogic.core.di;
 
 import com.memoizrlabs.ShankModule;
 
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.carriersetup.TimeAndCircleRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.signup.RegistrationRepository;
 import trackinlogic.trans.pss.com.trackinlogic.interfaces.TrackInServices;
@@ -16,6 +17,7 @@ public class RepositoryModule implements ShankModule {
     public void registerFactories() {
         registerFactory(RegistrationRepository.class,()-> new RegistrationRepository(provideSingleton(TrackInServices.class)));
         registerFactory(CarrierRegistrationRepository.class,()-> new CarrierRegistrationRepository(provideSingleton(TrackInServices.class)));
+        registerFactory(TimeAndCircleRepository.class,()-> new TimeAndCircleRepository(provideSingleton(TrackInServices.class)));
 
     }
 }

@@ -69,6 +69,17 @@
             android:textColor="#999999"
             android:text="Address" />
 
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/address2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/address1"
+            android:textColor="#999999"
+            android:text="Address" />
+
     </RelativeLayout>
 
     <TextView

@@ -4,12 +4,8 @@ package trackinlogic.trans.pss.com.trackinlogic.model.registration;
  * Created by Sekhar Madhiyazhagan on 5/27/2017.
  */
 
-public class TimeZone {
-    private String description;
+public class TimeZoneResonse  extends TimeZoneData{
 
-    public String getDescription() { return this.description; }
-
-    public void setDescription(String description) { this.description = description; }
 
     private int id;
 
@@ -23,9 +19,5 @@ public class TimeZone {
 
     public void setIsActive(boolean isActive) { this.isActive = isActive; }
 
-    private String unitName;
 
-    public String getUnitName() { return this.unitName; }
-
-    public void setUnitName(String unitName) { this.unitName = unitName; }
 }

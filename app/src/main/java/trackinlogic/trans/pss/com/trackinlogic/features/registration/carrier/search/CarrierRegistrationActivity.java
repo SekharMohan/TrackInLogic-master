@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.memoizrlabs.Shank;
@@ -15,12 +16,11 @@ import butterknife.BindString;
 import butterknife.BindView;
 import rx.Observable;
 import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
+import trackinlogic.trans.pss.com.trackinlogic.Henson;
 import trackinlogic.trans.pss.com.trackinlogic.R;
-import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.dotsearchresult.DotSearchActivity;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.ManualCarrierDetailsActivity;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierQueryString;
-import trackinlogic.trans.pss.com.trackinlogic.util.ToastUtil;
 
 
 public class CarrierRegistrationActivity extends BaseActivity  implements CarrierRegistrationPresenter.View {
@@ -32,6 +32,10 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     Button btnManualEntry;
     @BindView(R.id.edtDotNumber)
     EditText edtDotNumber;
+    @BindView(R.id.solo)
+    RadioButton rbSolo;
+    @BindView(R.id.team)
+    RadioButton rbTeam;
 
     @BindView(R.id.actionbar_right_icon)
     ImageView btnNext;
@@ -77,22 +81,32 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     @Override
     public void onGettingAddressSucess(CarrierDetails carrierDetails) {
         dismissLoading();
-        startActivity(DotSearchActivity.getStartIntent(this));
+       gotoDotSearchActivity(carrierDetails);
 
+    }
+
+    private void gotoDotSearchActivity(CarrierDetails carrierDetails) {
+        Intent intent = Henson.with(this)
+                .gotoDotSearchActivity().carrierDetails(carrierDetails).build();
+        startActivity(intent);
     }
 
     @Override
     public void onGettingAdressFailure() {
         dismissLoading();
-
-        ToastUtil.showErrorUpdate(this,getString(R.string.dotid_find_faild));
+     showUserMessage(getString(R.string.dotid_find_faild));
 
 
     }
 
     @Override
     public boolean isValidateDotId() {
-        return edtDotNumber.getText().toString().trim().length() >= 0? true:false;
+        if(rbSolo.isChecked() || rbTeam.isChecked()) {
+            return edtDotNumber.getText().toString().trim().length() >= 0 ? true : false;
+        } else  {
+            showUserMessage(getString(R.string.device_type));
+        }
+        return false;
     }
 
     @Override

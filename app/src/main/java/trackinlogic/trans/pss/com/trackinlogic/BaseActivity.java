@@ -67,6 +67,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void showUserMessage(String msg) {
+        ToastUtil.showErrorUpdate(this,msg);
+    }
+
     public void updateNetworkConnectivity() {
         ToastUtil.showErrorUpdate(this,"Please check internet connectivity");
 
