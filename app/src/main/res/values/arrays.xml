@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string-array name="state">
-    <item name="ny">New York</item>
-    <item name="california">California</item>
-    <item name="florida">Florida</item>
-    <item name="atlanda">Atlanda</item>
-    <item name="texas">Texas</item>
-</string-array>
 
     <string-array name="country">
         <item name="us">United States</item>

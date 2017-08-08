@@ -31,7 +31,10 @@
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.Registration;
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneData;
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneResonse;
+    import trackinlogic.trans.pss.com.trackinlogic.model.registration.TripCycle;
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
+    import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeInputPayLoad;
+    import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeModel;
 
 
     /**
@@ -148,6 +151,21 @@
             return null;
         }
 
+        @Override
+        public Observable<List<DeviceTypeModel>> getDriverDevices(int carrierId, boolean details, boolean inactive) {
+            return api.getDriverDevices(carrierId,details,inactive).subscribeOn(ioScheduler);
+        }
+
+        @Override
+        public Observable<DeviceTypeModel> postDriverDevice(int carrierId, DeviceTypeInputPayLoad device) {
+            return api.postDriverDevice(carrierId,device).subscribeOn(ioScheduler);
+        }
+
+        @Override
+        public Observable<List<TripCycle>> getServiceCycler() {
+            return api.getServiceCycler().subscribeOn(ioScheduler);
+        }
+
         private static HttpLoggingInterceptor provideHttpLoggingInterceptor() {
             HttpLoggingInterceptor httpLoggingInterceptor =
                     new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
@@ -193,6 +211,14 @@
             Observable<List<CycleRuleResponse>> postCargotypes(@Body List<CycleRuleData> cycleRuleDataList);
             @POST("cargotype")
             Observable<CycleRuleResponse> postCargotype(@Body CycleRuleData cycleRuleData);
+            @GET("driver/{carrierId}/devices")
+            Observable<List<DeviceTypeModel>> getDriverDevices(@Path("carrierId") int carrierId,@Query("details") boolean details,@Query("inactive") boolean inactive);
+            @POST("driver/{carrierId}/device")
+            Observable<DeviceTypeModel> postDriverDevice(@Path("carrierId") int carrierId, @Body DeviceTypeInputPayLoad device);
+
+            @GET("servicecycles")
+            Observable<List<TripCycle>> getServiceCycler();
+
 
         }
     }

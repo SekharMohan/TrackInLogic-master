@@ -55,6 +55,8 @@
             android:theme="@style/MyMaterialTheme" />
         <activity android:name=".features.loginspection.LogSheetInspection"
             android:theme="@style/MyMaterialTheme"></activity>
+        <activity android:name=".features.registration.carrier.devicetype.SelectDeviceTypeActivity"
+            android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>

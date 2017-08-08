@@ -1,6 +1,7 @@
 package trackinlogic.trans.pss.com.trackinlogic;
 
 import android.app.Application;
+import android.content.res.Resources;
 
 import com.memoizrlabs.ShankModuleInitializer;
 
@@ -14,7 +15,11 @@ import trackinlogic.trans.pss.com.trackinlogic.core.di.ServiceModule;
  */
 
 public class TrackInLogic extends Application {
-
+    private static TrackInLogic instance = null;
+    public TrackInLogic() {
+        super();
+        instance = this;
+    }
     @Override
     public void onCreate() {
         super.onCreate();
@@ -22,5 +27,15 @@ public class TrackInLogic extends Application {
                 new ServiceModule(),
                 new RepositoryModule(),
                 new PresenterModule());
+    }
+
+    public static TrackInLogic getInstance() {
+        return instance;
+    }
+    /**
+     * @return the ressources
+     */
+    public static Resources res() {
+        return getInstance().getResources();
     }
 }

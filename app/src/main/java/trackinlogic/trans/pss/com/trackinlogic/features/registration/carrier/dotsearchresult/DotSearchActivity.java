@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,21 +14,19 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
+import trackinlogic.trans.pss.com.trackinlogic.Henson;
 import trackinlogic.trans.pss.com.trackinlogic.R;
-import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.carriersetup.TimeAndCircleActivity;
-import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.ManualCarrierDetailsActivity;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
 
 public class DotSearchActivity extends BaseActivity implements View.OnClickListener {
 
     @InjectExtra
     CarrierDetails carrierDetails;
-    @BindString(R.string.log_settings)
+    @BindString(R.string.carrier_settings)
     String navTitle;
     @BindView(R.id.carrierAddress)
     RelativeLayout relCarrierAddrs;
-    @BindView(R.id.btnManual)
-    Button btnRegManual;
+
 
     @BindView(R.id.companyName)
     TextView tvCompanyName;
@@ -55,26 +52,31 @@ public class DotSearchActivity extends BaseActivity implements View.OnClickListe
         setContentView(R.layout.activity_dot_search);
         ButterKnife.bind(this);
         btnNext.setVisibility(View.GONE);
-        btnRegManual.setOnClickListener(this);
+
         relCarrierAddrs.setOnClickListener(this);
         init();
     }
 
     private void init() {
-        tvCompanyName.setText(carrierDetails.getName());
-        tvAddressLine1.setText(carrierDetails.getDotId());
-        tvAddressLine2.setText(carrierDetails.getDescription());
+        tvCompanyName.setText(getString(R.string.adrr_name,carrierDetails.getName()));
+        tvAddressLine1.setText(getString(R.string.addr_dotId,carrierDetails.getDotId()));
+        tvAddressLine2.setText(getString(R.string.addr_desc,carrierDetails.getDescription()));
     }
+private void gotoDeviceTypeActivity() {
+
+    Intent intent = Henson.with(this).gotoSelectDeviceTypeActivity().carrierId(carrierDetails.getId()).build();
+    startActivity(intent);
+
+
+}
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.carrierAddress:
-                startActivity(TimeAndCircleActivity.getStartIntent(this));
+                gotoDeviceTypeActivity();
                 break;
-            case R.id.btnManual:
-                startActivity(ManualCarrierDetailsActivity.getStartIntent(this));
-                break;
+
         }
 
     }

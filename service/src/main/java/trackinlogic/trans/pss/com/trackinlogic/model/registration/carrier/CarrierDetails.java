@@ -15,6 +15,7 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.Address;
 public class CarrierDetails  implements Parcelable{
         private int id;
 
+
         protected CarrierDetails(Parcel in) {
                 id = in.readInt();
                 name = in.readString();

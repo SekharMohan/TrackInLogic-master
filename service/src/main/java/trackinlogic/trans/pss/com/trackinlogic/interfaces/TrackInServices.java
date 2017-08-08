@@ -11,7 +11,10 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.OdoMeterRespon
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.Registration;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneData;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneResonse;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.TripCycle;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeInputPayLoad;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeModel;
 
 /**
  * Created by Sekhar Madhiyazhagan on 5/27/2017.
@@ -40,4 +43,12 @@ public interface TrackInServices {
     Observable<CycleRuleResponse> getCargotype( int cargoTypeId,  boolean details,  boolean inactive);
     Observable<List<CycleRuleResponse>> postCargotypes( List<CycleRuleData> cycleRuleDataList);
     Observable<CycleRuleResponse> postCargotype(CycleRuleData cycleRuleData);
+
+    Observable<List<DeviceTypeModel>> getDriverDevices( int carrierId,  boolean details,  boolean inactive);
+
+    Observable<DeviceTypeModel> postDriverDevice( int carrierId,DeviceTypeInputPayLoad device);
+
+
+    Observable<List<TripCycle>> getServiceCycler();
+
 }

@@ -11,6 +11,7 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.OdoMeterData;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.OdoMeterResponse;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneData;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneResonse;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.TripCycle;
 
 /**
  * Created by Sekhar Madhiyazhagan on 6/17/2017.
@@ -26,6 +27,7 @@ public class TimeAndCircleRepository {
     private final BehaviorSubject<OdoMeterResponse> publishOdometerSubject = BehaviorSubject.create();
     private final BehaviorSubject<List<CycleRuleResponse>> publishCycleListSubject = BehaviorSubject.create();
     private final BehaviorSubject<CycleRuleResponse> publisCycleSubject = BehaviorSubject.create();
+    private final BehaviorSubject<List<TripCycle>> publishServiceType = BehaviorSubject.create();
 
     public TimeAndCircleRepository(TrackInServices trackInServices) {
         this.trackInServices = trackInServices;
@@ -85,5 +87,10 @@ public class TimeAndCircleRepository {
 
     Observable<CycleRuleResponse> postCargotype(CycleRuleData cycleRuleData) {
         return postCargotype(cycleRuleData).doOnNext(cycleRuleResponse -> publisCycleSubject.onNext(cycleRuleResponse));
+    }
+
+    Observable<List<TripCycle>> getServiceType() {
+        return trackInServices.getServiceCycler().doOnNext(serviceTypeResponse -> publishServiceType.onNext(serviceTypeResponse));
+
     }
 }

@@ -9,6 +9,9 @@
     <string name="log_sheet">Log Sheet</string>
     <string name="log_sheet_inspection">Log Sheet Inspection</string>
     <string name="log_settings">Log Settings</string>
+    <string name="carrier_settings">Carrier Settings</string>
+    <string name="carrier_device_type">Device type</string>
+
     <string name="enter_your_dot_number_so_we_can">Enter your DOT # so we can fill in the Carrier Name and Address on your logs</string>
     <string name="dont_have_a_dot_number">"Don't have a DOT #?"</string>
     <string name="dont_know_your_dot_number">"Don't know your DOT #?"</string>
@@ -97,14 +100,19 @@
     <string name="first_name_empty">Please enter the name</string>
     <string name="password_invalid">Password must contains 1 caps letter ,1 small letter, 1 number and 1 special character</string>
     <string name="password_missmatch">Password and confirm password should match</string>
-    <string name="psw_min_limit">Password must be 8 characters</string>
+    <string name="psw_min_limit">Password must be 6 characters</string>
     <string name="email_invalid">Please enter valid email id</string>
     <string name="last_name_empty">Please enter the last name</string>
     <string name="phoneNo_empty">Please enter the phone number</string>
     <string name="email_empty">Please enter the email id</string>
     <string name="user_name_empty">Please enter the user name</string>
-    <string name="dotid_find_faild">Unable to find dotId. You may register manually</string>
+    <string name="dotid_find_faild">Please enter carrier details manually</string>
     <string name="device_type">Please select device type</string>
     <string name="phoneNo_invalid">Please enter the valid phone number</string>
-
+    <string name="alert_dialog_title_empty">Hello</string>
+    <string name="alert_dialog_message_empty">No content available</string>
+    <string name="adrr_name" formatted="false">NAME : %S</string >
+     <string name="addr_dotId" formatted="false">DotId : %s</string>
+    <string name="addr_desc" formatted="false">Description : %s</string>
+    <string name="select_country">Select country</string>
 </resources>

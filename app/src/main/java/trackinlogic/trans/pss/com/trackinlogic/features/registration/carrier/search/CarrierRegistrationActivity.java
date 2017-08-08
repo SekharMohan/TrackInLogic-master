@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.memoizrlabs.Shank;
@@ -24,7 +23,7 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.Carrie
 
 
 public class CarrierRegistrationActivity extends BaseActivity  implements CarrierRegistrationPresenter.View {
-    @BindString(R.string.log_settings)
+    @BindString(R.string.carrier_settings)
     String navTittle;
     @BindView(R.id.regCarrierSearch)
     Button btnCarrierSearch;
@@ -32,10 +31,7 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     Button btnManualEntry;
     @BindView(R.id.edtDotNumber)
     EditText edtDotNumber;
-    @BindView(R.id.solo)
-    RadioButton rbSolo;
-    @BindView(R.id.team)
-    RadioButton rbTeam;
+
 
     @BindView(R.id.actionbar_right_icon)
     ImageView btnNext;
@@ -82,7 +78,6 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     public void onGettingAddressSucess(CarrierDetails carrierDetails) {
         dismissLoading();
        gotoDotSearchActivity(carrierDetails);
-
     }
 
     private void gotoDotSearchActivity(CarrierDetails carrierDetails) {
@@ -101,12 +96,9 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
 
     @Override
     public boolean isValidateDotId() {
-        if(rbSolo.isChecked() || rbTeam.isChecked()) {
+
             return edtDotNumber.getText().toString().trim().length() >= 0 ? true : false;
-        } else  {
-            showUserMessage(getString(R.string.device_type));
-        }
-        return false;
+
     }
 
     @Override
@@ -117,7 +109,6 @@ public class CarrierRegistrationActivity extends BaseActivity  implements Carrie
     @Override
     public void updateNetworkStatus() {
         updateNetworkConnectivity();
-
     }
 
     @Override

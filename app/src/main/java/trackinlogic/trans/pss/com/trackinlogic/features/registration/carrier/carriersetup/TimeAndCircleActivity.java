@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.f2prateek.dart.HensonNavigable;
 import com.memoizrlabs.Shank;
 
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.OdoMeterRespon
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeAndCircleReuestQuery;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneData;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.TimeZoneResonse;
-
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.TripCycle;
+@HensonNavigable
 public class TimeAndCircleActivity extends BaseActivity implements TimeAndCirclePresenter.View {
     @BindView(R.id.actionbar_right_icon)
     ImageView iViewNext;
@@ -73,35 +75,6 @@ public class TimeAndCircleActivity extends BaseActivity implements TimeAndCircle
         presenter.onViewDetached();
     }
 
-    public void spinnerSetup(Spinner spinner, List<String> values, String hint) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item) {
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-
-                View v = super.getView(position, convertView, parent);
-                if (position == getCount()) {
-                    ((TextView) v.findViewById(android.R.id.text1)).setText("");
-                    ((TextView) v.findViewById(android.R.id.text1)).setHint(getItem(getCount())); //"Hint to be displayed"
-                }
-
-                return v;
-            }
-
-            @Override
-            public int getCount() {
-                return super.getCount() - 1; // you dont display last item. It is used as hint.
-            }
-
-        };
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapter.addAll(values);
-        adapter.add(hint);
-
-        spinner.setAdapter(adapter);
-        spinner.setSelection(adapter.getCount());
-    }
 
     @Override
     public void init() {
@@ -213,6 +186,16 @@ public class TimeAndCircleActivity extends BaseActivity implements TimeAndCircle
     public void setCargoTypes(List<CycleRuleResponse> cycleRuleResponseList) {
         List<String> cargoTypeList = new ArrayList<String>();
         for(CycleRuleResponse cycleRuleResponse : cycleRuleResponseList) {
+            cargoTypeList.add(cycleRuleResponse.getName());
+        }
+        spinnerSetup(spinnerCycleRule, cargoTypeList, getString(R.string.cycle_rule_selection));
+
+    }
+
+    @Override
+    public void setServiceType(List<TripCycle> serviceType) {
+        List<String> cargoTypeList = new ArrayList<String>();
+        for(TripCycle cycleRuleResponse : serviceType) {
             cargoTypeList.add(cycleRuleResponse.getName());
         }
         spinnerSetup(spinnerCycleRule, cargoTypeList, getString(R.string.cycle_rule_selection));

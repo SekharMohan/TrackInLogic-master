@@ -1,5 +1,6 @@
 package trackinlogic.trans.pss.com.trackinlogic.features.common.customview;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -27,7 +28,7 @@ public class Loader {
                 progressDialog = null;
             }
             progressDialog = new Dialog(context);
-            if (!progressDialog.isShowing()) {
+            if (!progressDialog.isShowing() && !((Activity)context).isFinishing()) {
                 progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 progressDialog.setContentView(R.layout.layout_progress_bar);
 
