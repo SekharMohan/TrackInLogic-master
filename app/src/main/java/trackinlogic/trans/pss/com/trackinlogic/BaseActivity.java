@@ -3,12 +3,15 @@ package trackinlogic.trans.pss.com.trackinlogic;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -121,6 +124,38 @@ public void dismissLoading() {
 
         spinner.setAdapter(adapter);
         spinner.setSelection(adapter.getCount());
+    }
+
+    /**
+     * Method to set field errors
+     * @param textInputLayout
+     * @param editText
+     * @param errorMsg
+     */
+    public void setError(TextInputLayout textInputLayout, EditText editText, String errorMsg) {
+        setEditFieldSelection(editText);
+        editText.requestFocus();
+        textInputLayout.setError(errorMsg);
+        textInputLayout.setErrorEnabled(true);
+
+    }
+    private void setEditFieldSelection(EditText editText) {
+        if (editText.getText().toString().length() != 0) {
+            editText.setSelection(editText.getText().toString().length());
+        }
+    }
+    public void resetTextInputErrors(TextInputLayout... textInputLayouts) {
+        for (TextInputLayout textInputLayout : textInputLayouts) {
+            resetTextInputError(textInputLayout);
+        }
+    }
+
+    public void resetTextInputError(TextInputLayout textInputField) {
+        if (textInputField != null && !TextUtils.isEmpty(textInputField.getError())) {
+            textInputField.setError(null);
+            textInputField.setErrorEnabled(false);
+        }
+
     }
 
 }

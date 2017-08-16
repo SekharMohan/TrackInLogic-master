@@ -17,7 +17,7 @@ import rx.Observable;
 import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
 import trackinlogic.trans.pss.com.trackinlogic.Henson;
 import trackinlogic.trans.pss.com.trackinlogic.R;
-import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.ManualCarrierDetailsActivity;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.carrieraddress.ManualCarrierDetailsActivity;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierQueryString;
 
@@ -117,18 +117,5 @@ showLodaing();
         return new CarrierQueryString(edtDotNumber.getText().toString(),true,true);
     }
 
- /*   @Override
-    public void onClick(View view) {
 
-        switch (view.getId()){
-            case R.id.regCarrierSearch:
-                startActivity(
-                        DotSearchActivity.getStartIntent(this));
-                break;
-            case R.id.regManual:
-                startActivity(ManualCarrierDetailsActivity.getStartIntent(this));
-                break;
-        }
-
-    }*/
 }

@@ -10,6 +10,8 @@
     <string name="log_sheet_inspection">Log Sheet Inspection</string>
     <string name="log_settings">Log Settings</string>
     <string name="carrier_settings">Carrier Settings</string>
+    <string name="carrier_address">Set carrier address</string>
+    <string name="home_terminal">Set home terminal</string>
     <string name="carrier_device_type">Device type</string>
 
     <string name="enter_your_dot_number_so_we_can">Enter your DOT # so we can fill in the Carrier Name and Address on your logs</string>
@@ -98,7 +100,7 @@
     <string name="confirm_psw_empty">Please enter the  confirm password</string>
     <string name="psw_empty">Please enter the password</string>
     <string name="first_name_empty">Please enter the name</string>
-    <string name="password_invalid">Password must contains 1 caps letter ,1 small letter, 1 number and 1 special character</string>
+    <string name="password_invalid">Password must contains 1 caps letter , 1 number and 1 special character</string>
     <string name="password_missmatch">Password and confirm password should match</string>
     <string name="psw_min_limit">Password must be 6 characters</string>
     <string name="email_invalid">Please enter valid email id</string>
@@ -111,8 +113,8 @@
     <string name="phoneNo_invalid">Please enter the valid phone number</string>
     <string name="alert_dialog_title_empty">Hello</string>
     <string name="alert_dialog_message_empty">No content available</string>
-    <string name="adrr_name" formatted="false">NAME : %S</string >
-     <string name="addr_dotId" formatted="false">DotId : %s</string>
+    <string name="adrr_name" formatted="false">NAME : %S</string>
+    <string name="addr_dotId" formatted="false">DotId : %s</string>
     <string name="addr_desc" formatted="false">Description : %s</string>
     <string name="select_country">Select country</string>
 </resources>

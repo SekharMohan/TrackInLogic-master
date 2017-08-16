@@ -7,6 +7,12 @@ import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.car
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.carriersetup.TimeAndCircleRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.devicetype.SelectDeviceTypePresenter;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.devicetype.SelectDeviceTypeRepository;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.dotsearchresult.DotSearchPresenter;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.dotsearchresult.DotSearchRepository;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.carrieraddress.ManualCarrierDetailsPresenter;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.carrieraddress.ManualCarrierDetailsRepository;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.hometerminal.HomeTerminalPresenter;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.hometerminal.HomeTerminalRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationPresenter;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.signup.RegistrationPresenter;
@@ -37,7 +43,15 @@ public class PresenterModule implements ShankModule {
         registerFactory(SelectDeviceTypePresenter.class, () -> new SelectDeviceTypePresenter(
                 provideSingleton(SelectDeviceTypeRepository.class),
                 named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
-
+        registerFactory(ManualCarrierDetailsPresenter.class, () -> new ManualCarrierDetailsPresenter(
+                provideSingleton(ManualCarrierDetailsRepository.class),
+                named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
+        registerFactory(DotSearchPresenter.class, () -> new DotSearchPresenter(
+                provideSingleton(DotSearchRepository.class),
+                named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
+        registerFactory(HomeTerminalPresenter.class, () -> new HomeTerminalPresenter(
+                provideSingleton(HomeTerminalRepository.class),
+                named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
 
     }
 }

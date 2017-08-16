@@ -35,6 +35,7 @@
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeInputPayLoad;
     import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeModel;
+    import trackinlogic.trans.pss.com.trackinlogic.model.registration.homeTerminals.HomeTerminals;
 
 
     /**
@@ -157,6 +158,11 @@
         }
 
         @Override
+        public Observable<List<HomeTerminals>> getHomeTerminals(int carrierId, boolean details, boolean inactive) {
+            return api.getHomeTerminals(carrierId,details,inactive).subscribeOn(ioScheduler);
+        }
+
+        @Override
         public Observable<DeviceTypeModel> postDriverDevice(int carrierId, DeviceTypeInputPayLoad device) {
             return api.postDriverDevice(carrierId,device).subscribeOn(ioScheduler);
         }
@@ -218,7 +224,7 @@
 
             @GET("servicecycles")
             Observable<List<TripCycle>> getServiceCycler();
-
-
+            @GET("carrier/{carrierId}/hometerminals")
+            Observable<List<HomeTerminals>> getHomeTerminals(@Path("carrierId") int carrierId, @Query("details") boolean details, @Query("inactive") boolean inactive);
         }
     }

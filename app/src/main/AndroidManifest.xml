@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="trackinlogic.trans.pss.com.trackinlogic">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
 
-    </uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".TrackInLogic"
@@ -35,7 +34,7 @@
             android:name=".features.registration.carrier.search.CarrierRegistrationActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".features.registration.carrier.manual.ManualCarrierDetailsActivity"
+            android:name=".features.registration.carrier.manual.carrieraddress.ManualCarrierDetailsActivity"
             android:theme="@style/MyMaterialTheme" />
         <activity
             android:name=".features.registration.carrier.dotsearchresult.DotSearchActivity"
@@ -53,10 +52,13 @@
         <activity
             android:name=".features.logbook.LogBookActivity"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".features.loginspection.LogSheetInspection"
-            android:theme="@style/MyMaterialTheme"></activity>
-        <activity android:name=".features.registration.carrier.devicetype.SelectDeviceTypeActivity"
-            android:theme="@style/MyMaterialTheme"></activity>
+        <activity
+            android:name=".features.loginspection.LogSheetInspection"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".features.registration.carrier.devicetype.SelectDeviceTypeActivity"
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".features.registration.carrier.manual.hometerminal.HomeTerminalActivity" android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>

@@ -15,7 +15,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <trackinlogic.trans.pss.com.trackinlogic.features.customview.LogChartView
+        <trackinlogic.trans.pss.com.trackinlogic.features.common.customview.LogChartView
+
             android:layout_above="@+id/child"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

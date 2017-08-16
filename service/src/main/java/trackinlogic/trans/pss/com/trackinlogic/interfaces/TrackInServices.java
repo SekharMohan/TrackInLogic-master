@@ -15,6 +15,7 @@ import trackinlogic.trans.pss.com.trackinlogic.model.registration.TripCycle;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.carrier.CarrierDetails;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeInputPayLoad;
 import trackinlogic.trans.pss.com.trackinlogic.model.registration.devicetype.DeviceTypeModel;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.homeTerminals.HomeTerminals;
 
 /**
  * Created by Sekhar Madhiyazhagan on 5/27/2017.
@@ -45,6 +46,7 @@ public interface TrackInServices {
     Observable<CycleRuleResponse> postCargotype(CycleRuleData cycleRuleData);
 
     Observable<List<DeviceTypeModel>> getDriverDevices( int carrierId,  boolean details,  boolean inactive);
+    Observable<List<HomeTerminals>> getHomeTerminals( int carrierId,  boolean details,  boolean inactive);
 
     Observable<DeviceTypeModel> postDriverDevice( int carrierId,DeviceTypeInputPayLoad device);
 

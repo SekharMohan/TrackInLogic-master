@@ -42,12 +42,18 @@ public class SelectDeviceTypePresenter extends BasePresenter<SelectDeviceTypePre
             if (view.validateDeviceType()) {
 
                 if (networkStatus.isConnected()) {
+                    if (view.selectedDevice() != null) {
                     repository.postDriverDevice(view.getCarrierId(), view.selectedDevice()).observeOn(uiScheduler).subscribeOn(uiScheduler).subscribe(carrierDetails -> {
                         view.onPostDevice(carrierDetails);
+
                     }, throwable -> {
                         throwable.printStackTrace();
                         view.onFailure();
                     });
+                }else {
+                        view.onFailure();
+                    }
+
                 } else {
                     view.connectivityFailed();
                 }

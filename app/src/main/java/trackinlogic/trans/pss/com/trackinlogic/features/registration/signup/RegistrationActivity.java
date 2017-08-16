@@ -1,37 +1,36 @@
     package trackinlogic.trans.pss.com.trackinlogic.features.registration.signup;
 
     import android.content.Context;
-    import android.content.Intent;
-    import android.os.Bundle;
-    import android.support.design.widget.TextInputLayout;
-    import android.text.TextUtils;
-    import android.view.View;
-    import android.widget.AdapterView;
-    import android.widget.EditText;
-    import android.widget.ImageView;
-    import android.widget.Spinner;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 
-    import com.jakewharton.rxbinding.view.RxView;
-    import com.memoizrlabs.Shank;
+import com.jakewharton.rxbinding.view.RxView;
+import com.memoizrlabs.Shank;
 
-    import java.util.Arrays;
+import java.util.Arrays;
 
-    import butterknife.BindArray;
-    import butterknife.BindString;
-    import butterknife.BindView;
-    import butterknife.ButterKnife;
-    import butterknife.OnClick;
-    import butterknife.OnFocusChange;
-    import butterknife.OnTextChanged;
-    import okhttp3.ResponseBody;
-    import rx.Observable;
-    import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
-    import trackinlogic.trans.pss.com.trackinlogic.R;
-    import trackinlogic.trans.pss.com.trackinlogic.features.common.customview.Loader;
-    import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationActivity;
-    import trackinlogic.trans.pss.com.trackinlogic.model.registration.Registration;
-    import trackinlogic.trans.pss.com.trackinlogic.util.ToastUtil;
-    import trackinlogic.trans.pss.com.trackinlogic.util.ValidationUtils;
+import butterknife.BindArray;
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnFocusChange;
+import butterknife.OnTextChanged;
+import okhttp3.ResponseBody;
+import rx.Observable;
+import trackinlogic.trans.pss.com.trackinlogic.BaseActivity;
+import trackinlogic.trans.pss.com.trackinlogic.R;
+import trackinlogic.trans.pss.com.trackinlogic.features.common.customview.Loader;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationActivity;
+import trackinlogic.trans.pss.com.trackinlogic.model.registration.Registration;
+import trackinlogic.trans.pss.com.trackinlogic.util.ToastUtil;
+import trackinlogic.trans.pss.com.trackinlogic.util.ValidationUtils;
 
     public class RegistrationActivity extends BaseActivity implements RegistrationPresenter.View {
         @BindString(R.string.sign_up)
@@ -215,19 +214,7 @@
             return true;
         }
 
-        private void setEditFieldSelection(EditText editText) {
-            if (editText.getText().toString().length() != 0) {
-                editText.setSelection(editText.getText().toString().length());
-            }
-        }
 
-        private void setError(TextInputLayout textInputLayout, EditText editText, String errorMsg) {
-            setEditFieldSelection(editText);
-            editText.requestFocus();
-            textInputLayout.setError(errorMsg);
-            textInputLayout.setErrorEnabled(true);
-
-        }
 
         @OnTextChanged({R.id.edtFirstName, R.id.edtLastName, R.id.edtPhoneNumber, R.id.edtEmail, R.id.edtUserName, R.id.edtPassword, R.id.edtConfirmPassword})
         void handleFirstNameEdittextError() {
@@ -262,19 +249,7 @@
             return null;
         }
 
-        private void resetTextInputErrors(TextInputLayout... textInputLayouts) {
-            for (TextInputLayout textInputLayout : textInputLayouts) {
-                resetTextInputError(textInputLayout);
-            }
-        }
 
-        private void resetTextInputError(TextInputLayout textInputField) {
-            if (textInputField != null && !TextUtils.isEmpty(textInputField.getError())) {
-                textInputField.setError(null);
-                textInputField.setErrorEnabled(false);
-            }
-
-        }
 
         @Override
         public void onUserInteraction() {

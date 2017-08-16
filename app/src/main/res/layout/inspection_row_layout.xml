@@ -33,7 +33,7 @@
         android:textSize="15sp" />
 </android.support.v7.widget.LinearLayoutCompat>
 
-    <trackinlogic.trans.pss.com.trackinlogic.features.customview.LogChartView
+    <trackinlogic.trans.pss.com.trackinlogic.features.common.customview.LogChartView
         android:id="@+id/inspection_chart_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"

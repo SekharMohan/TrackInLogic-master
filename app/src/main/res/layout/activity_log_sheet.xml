@@ -74,7 +74,7 @@
                         android:textColor="@color/colorAccent"
                         android:text="@string/instruction_text" />
 
-                    <trackinlogic.trans.pss.com.trackinlogic.features.customview.LogChartView
+                    <trackinlogic.trans.pss.com.trackinlogic.features.common.customview.LogChartView
                         android:id="@+id/chartView"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"

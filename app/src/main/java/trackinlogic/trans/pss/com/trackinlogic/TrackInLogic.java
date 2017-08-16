@@ -24,7 +24,7 @@ public class TrackInLogic extends Application {
     public void onCreate() {
         super.onCreate();
         ShankModuleInitializer.initializeModules(new ApplicationModule(this.getApplicationContext()),
-                new ServiceModule(),
+                new ServiceModule(this.getApplicationContext()),
                 new RepositoryModule(),
                 new PresenterModule());
     }
