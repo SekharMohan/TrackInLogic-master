@@ -91,6 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cycleRule" />
 
     <TextView
+        android:visibility="gone"
         android:paddingRight="8dp"
         android:paddingLeft="8dp"
         android:paddingTop="20dp"
@@ -106,9 +107,11 @@
         android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCycleRule" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCycleRule"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/odometerTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -123,6 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Spinner
+        android:visibility="gone"
         style="@android:style/Widget.Holo.Light.Spinner"
         android:id="@+id/spinnerOdometer"
         android:layout_width="0dp"

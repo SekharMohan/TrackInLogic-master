@@ -31,7 +31,7 @@
     <string name="home_terminal_street_hint">Street</string>
     <string name="home_terminal_time_zone">Home Terminal Time Zone</string>
     <string name="home_terminal_zip_hint">Zip</string>
-    <string name="cycle_rule">Cycle Rule</string>
+    <string name="cycle_rule">Service Cycle Rule</string>
     <string name="cycle_rule_selection">Select Cylce Rule</string>
     <string name="odometer_selection">Select odometer</string>
     <string name="time_zone_selection">Select Time zone</string>

@@ -41,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <EditText
+            android:id="@+id/edtName"
             android:drawableRight="@drawable/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +60,7 @@
         android:id="@+id/textInputLayout2">
 
         <EditText
+            android:id="@+id/edtPassword"
             android:drawableRight="@drawable/psw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

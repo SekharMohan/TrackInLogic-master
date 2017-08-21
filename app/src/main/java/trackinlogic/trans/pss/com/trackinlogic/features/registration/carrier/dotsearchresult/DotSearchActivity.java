@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,8 +33,6 @@ public class DotSearchActivity extends BaseActivity implements DotSearchPresente
     String navTitle;
     @BindView(R.id.carrierAddress)
     RelativeLayout relCarrierAddrs;
-
-
     @BindView(R.id.companyName)
     TextView tvCompanyName;
     @BindView(R.id.address1)
@@ -46,8 +43,7 @@ public class DotSearchActivity extends BaseActivity implements DotSearchPresente
     ImageView btnNext;
     @BindView(R.id.rvHomeTerminalList)
     RecyclerView rvHomeTerminalList;
-    @BindView(R.id.icon)
-    CheckBox checkBoxCarrierAddresss;
+
     @BindView(R.id.textView5)
     TextView textView5;
     private DotSearchPresenter presenter;
@@ -94,14 +90,9 @@ public class DotSearchActivity extends BaseActivity implements DotSearchPresente
 
     @Override
     public boolean validation() {
-
-        if (!checkBoxCarrierAddresss.isChecked()) {
+        if (!adapter.isHomeTerminalAddressChecked()) {
             showUserMessage(
-           "Please confirm the carrier address by selecting check box");
-            return false;
-        } else  if(!adapter.isHomeTerminalAddressChecked()) {
-            showUserMessage(
-                    "Select your home terminal");
+                    "Please select home terminal address");
             return false;
         }
 
@@ -119,7 +110,7 @@ public class DotSearchActivity extends BaseActivity implements DotSearchPresente
         dismissLoading();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvHomeTerminalList.setLayoutManager(layoutManager);
-         adapter = new HomeTerminalAdapter(homeTerminals);
+        adapter = new HomeTerminalAdapter(homeTerminals);
         rvHomeTerminalList.setAdapter(adapter);
     }
 

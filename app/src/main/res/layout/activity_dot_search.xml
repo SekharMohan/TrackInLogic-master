@@ -28,7 +28,7 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:layout_height="wrap_content"
-        android:text="Carrier address"
+        android:text="Carrier head office address"
         android:textStyle="bold"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -51,20 +51,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/carrierAddress">
 
-        <CheckBox
-            android:layout_marginRight="16dp"
-            android:backgroundTint="@android:color/black"
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
 
-            />
 
         <TextView
             android:layout_marginLeft="16dp"
-
             android:textSize="14sp"
             android:id="@+id/companyName"
             android:layout_width="match_parent"
@@ -72,7 +62,7 @@
             android:text="Company Name"
             android:textStyle="bold"
             android:textColor="#999999"
-            android:layout_toLeftOf="@id/icon"/>
+           />
         <TextView
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"

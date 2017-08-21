@@ -15,6 +15,8 @@ import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.man
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.manual.hometerminal.HomeTerminalRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationPresenter;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.carrier.search.CarrierRegistrationRepository;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.login.LoginPresenter;
+import trackinlogic.trans.pss.com.trackinlogic.features.registration.login.LoginRepository;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.signup.RegistrationPresenter;
 import trackinlogic.trans.pss.com.trackinlogic.features.registration.signup.RegistrationRepository;
 import trackinlogic.trans.pss.com.trackinlogic.util.NetworkUtil;
@@ -51,6 +53,9 @@ public class PresenterModule implements ShankModule {
                 named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
         registerFactory(HomeTerminalPresenter.class, () -> new HomeTerminalPresenter(
                 provideSingleton(HomeTerminalRepository.class),
+                named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
+        registerFactory(LoginPresenter.class, () -> new LoginPresenter(
+                provideSingleton(LoginRepository.class),
                 named(ApplicationModule.UI_SCHEDULER).provideSingleton(Scheduler.class),provideSingleton(NetworkUtil.class)));
 
     }

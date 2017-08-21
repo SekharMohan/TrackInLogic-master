@@ -3,20 +3,21 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
-        android:id="@+id/linearLayout4">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <include
             android:id="@+id/toolbar_layout"
             layout="@layout/app_toolbar"
@@ -25,39 +26,37 @@
     </LinearLayout>
 
 
-        <android.support.v7.widget.AppCompatEditText
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:hint="Enter Carrier Name"
-            android:layout_marginRight="8dp"
-            android:textSize="14sp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:id="@+id/edtCarrierName"
-            app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"/>
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edtCarrierName"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Enter Carrier Name"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 
     <TextView
-        android:textAllCaps="true"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
+        android:id="@+id/textView8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="24dp"
         android:text="Main Office Address"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCarrierName"
-        android:id="@+id/textView8" />
-
-    <TextView
+        android:textAllCaps="true"
         android:textColor="@color/colorAccent"
         android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCarrierName" />
+
+    <TextView
         android:id="@+id/textView7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -66,38 +65,59 @@
         android:layout_marginTop="24dp"
         android:text="Carrier Name"
         android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayoutStLine1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <EditText
+            android:id="@+id/edtSt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Street line 1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        android:id="@+id/textInputLayout4">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStLine1">
 
         <EditText
             android:id="@+id/edtStreet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Street" />
+            android:hint="Street line2" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-        android:id="@+id/textInputLayout5">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <EditText
             android:id="@+id/edtCity"
@@ -107,8 +127,8 @@
     </android.support.design.widget.TextInputLayout>
 
     <Spinner
-        style="@android:style/Widget.Holo.Light.Spinner"
         android:id="@+id/spinnerCountry"
+        style="@android:style/Widget.Holo.Light.Spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -119,8 +139,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 
     <Spinner
-        style="@android:style/Widget.Holo.Light.Spinner"
         android:id="@+id/spinnerState"
+        style="@android:style/Widget.Holo.Light.Spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -134,19 +154,19 @@
         android:id="@+id/textInputLayoutZip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerState">
 
         <EditText
             android:id="@+id/zip"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Zip" />
+            android:hint="Zip"
+            android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>
